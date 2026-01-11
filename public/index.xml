@@ -5,8 +5,7 @@
     <link>https://blog.roop-backend.site/</link>
     <description>Recent content on On Software — Dev Roop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 10 Jan 2026 15:17:40 +0530</lastBuildDate><atom:link href="https://blog.roop-backend.site/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://blog.roop-backend.site/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My &#34;Opionated&#34; Way of Making TypeScript Applications</title>
       <link>https://blog.roop-backend.site/posts/how-i-create-ts-apps/</link>

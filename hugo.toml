@@ -1,5 +1,5 @@
 # baseURL = "https://blog.devroop.site"
-baseURL = "https://blog.roop-backend.site"
+baseURL = "https://www.roop-backend.site"
 disqusShortname = ""
 enableGitInfo = true 
 enableRobotsTXT = true
@@ -61,7 +61,7 @@ pre = """
 weight = 3
 
 [params]
-baseURL = "https://blog.roop-backend.site"
+baseURL = "https://roop-backend.site"
 disqusShortname = ""
 enableGitInfo = true 
 enableRobotsTXT = true

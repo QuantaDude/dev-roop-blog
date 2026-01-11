@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://www.roop-backend.site/sitemap.xml
+Sitemap: https://quantadude.github.io/dev-roop-blog/sitemap.xml

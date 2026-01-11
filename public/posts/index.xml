@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on On Software — Dev Roop</title>
-    <link>https://www.roop-backend.site/posts/</link>
+    <link>https://quantadude.github.io/dev-roop-blog/posts/</link>
     <description>Recent content in Posts on On Software — Dev Roop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Jan 2026 15:17:40 +0530</lastBuildDate><atom:link href="https://www.roop-backend.site/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jan 2026 15:17:40 +0530</lastBuildDate><atom:link href="https://quantadude.github.io/dev-roop-blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My &#34;Opionated&#34; Way of Making TypeScript Applications</title>
-      <link>https://www.roop-backend.site/posts/how-i-create-ts-apps/</link>
+      <link>https://quantadude.github.io/dev-roop-blog/posts/how-i-create-ts-apps/</link>
       <pubDate>Sat, 10 Jan 2026 15:17:40 +0530</pubDate>
       
-      <guid>https://www.roop-backend.site/posts/how-i-create-ts-apps/</guid>
+      <guid>https://quantadude.github.io/dev-roop-blog/posts/how-i-create-ts-apps/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In this article, I&amp;rsquo;ll share what I&amp;rsquo;ve been learning for the past one year - which is how to create &lt;strong&gt;clean&lt;/strong&gt;, easy to &lt;strong&gt;test&lt;/strong&gt; TypeScript back-end code.
 If you&amp;rsquo;re someone who is about to get into web development, specifically back-end or someone who has made one or two projects using express.js, then this article is for you.&lt;/p&gt;

@@ -16,6 +16,10 @@ pagerSize = 5
 tags = "TypeScript C++ Zig"
 categories = "categories"
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [[menu.main]]
 identifier = "home"
 name = "Home"

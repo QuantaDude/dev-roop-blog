@@ -84,6 +84,16 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
+      - name: Debug - Check public directory
+        run: |
+          echo "Contents of public/:"
+          ls -la public/
+          echo "Contents of public/css/:"
+          ls -la public/css/ || echo "public/css/ does not exist"
+          echo "Contents of public/katex/:"
+          ls -la public/katex/ || echo "public/katex/ does not exist"
+          echo "Checking if resume exists:"
+          ls -la public/resume/ || echo "public/resume/ does not exist"
       - name: Install weasyprint
         run: |
           sudo apt-get update

@@ -138,17 +138,16 @@ main.resume {
     }
 
     .resume-download {
-      margin-top: 3rem;
+      margin-top: 0;
       text-align: center;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border-color);
+      padding-top: 0;
 
       .download-button {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
         padding: 0.75rem 1.5rem;
-        background-color: var(--link-color);
+        background-color: var(--orange-dim);
         color: white;
         text-decoration: none;
         border-radius: 5px;

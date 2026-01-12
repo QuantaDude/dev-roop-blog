@@ -6,7 +6,7 @@ hasCJKLanguage = true
 languageCode = "en"
 rssLimit = 10
 theme = "texify3"
-title = "On Software — Dev Roop"
+title = "Roop's Docs"
 
 [pagination]
 pagerSize = 5
@@ -97,7 +97,7 @@ enableRobotsTXT = true
 hasCJKLanguage = true
 languageCode = "en"
 rssLimit = 10
-title = "On Software — Dev Roop"
+title = "Roop's Docs"
 author = "Abhirup Bhattacharyya"
 description = "Programming notes and ideas on topics like web dev, game dev and computer graphics."
 footnote = """

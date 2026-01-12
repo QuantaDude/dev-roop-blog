@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://localhost:1313/dev-roop-blog/sitemap.xml
+Sitemap: https://quantadude.github.io/dev-roop-blog/sitemap.xml

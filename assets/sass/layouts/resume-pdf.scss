@@ -1,0 +1,143 @@
+@use "sass:math";
+
+/* =========================
+   FORCE DARK THEME FOR PDF
+   ========================= */
+
+:root {
+  --bg_h: #282828;
+  --bg: #282828;
+  --bg_s: #3c3836;
+  --bg1: #3c3836;
+  --bg2: #504945;
+  --bg3: #665c54;
+  --bg4: #7c6f64;
+
+  --fg: #ebdbb2;
+  --fg1: #ebdbb2;
+  --fg2: #d5c4a1;
+  --fg3: #bdae93;
+  --fg4: #a89984;
+
+  /* ORANGE ONLY */
+  --orange: #fe8019;
+  --orange-dim: #d65d0e;
+
+  --link-color: var(--orange);
+  --link-hover-color: var(--orange-dim);
+  --border-color: #504945;
+  --secondary-text-color: #bdae93;
+
+  --code-bg-color: #3c3836;
+}
+main.resume {
+  background: var(--bg);
+  color: var(--fg);
+  max-width: 100% !important;
+
+  article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+
+    header {
+      text-align: center;
+      border-bottom: 2px solid var(--fg4);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+
+      h1 {
+        font-size: 2.4rem;
+        margin-bottom: 0.4rem;
+        color: var(--fg);
+      }
+
+      .subtitle {
+        color: var(--secondary-text-color);
+        font-size: 1.15rem;
+      }
+
+      .contact-info p {
+        margin: 0.3rem 0;
+      }
+
+      time {
+        display: none; /* PDFs don’t need this */
+      }
+    }
+
+    .content {
+      line-height: 1.75;
+
+      h2 {
+        margin-top: 2rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.4rem;
+        font-size: 1.7rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        margin-top: 1.2rem;
+      }
+
+      p,
+      li {
+        text-align: justify;
+        hyphens: auto;
+      }
+
+      ul,
+      ol {
+        margin-left: 1.4rem;
+      }
+
+      strong {
+        color: var(--fg);
+      }
+
+      /* 🔥 ORANGE LINKS — ALWAYS */
+      a,
+      a:visited,
+      a:hover,
+      a:active {
+        color: var(--orange);
+        text-decoration: underline;
+        border: none;
+      }
+
+      code {
+        background: var(--code-bg-color);
+        padding: 0.15rem 0.35rem;
+        border-radius: 3px;
+      }
+
+      blockquote {
+        border-left: 3px solid var(--orange);
+        padding-left: 1rem;
+        color: var(--secondary-text-color);
+        font-style: italic;
+      }
+    }
+
+    .resume-download {
+      display: none; /* No buttons in PDF */
+    }
+  }
+}
+@page {
+  size: A4;
+  margin: 14mm;
+}
+
+@media print {
+  body {
+    background: var(--bg) !important;
+    color: var(--fg) !important;
+  }
+
+  main.resume {
+    box-shadow: none;
+  }
+}
+

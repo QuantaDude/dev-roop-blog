@@ -2,49 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/dev-roop-blog/categories/</loc>
+    <loc>https://quantadude.github.io/dev-roop-blog/categories/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dev-roop-blog/tags/functional-composition/</loc>
+    <loc>https://quantadude.github.io/dev-roop-blog/tags/functional-composition/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dev-roop-blog/posts/</loc>
+    <loc>https://quantadude.github.io/dev-roop-blog/posts/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dev-roop-blog/tags/software/</loc>
+    <loc>https://quantadude.github.io/dev-roop-blog/tags/software/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dev-roop-blog/tags/</loc>
+    <loc>https://quantadude.github.io/dev-roop-blog/tags/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dev-roop-blog/posts/test2/</loc>
+    <loc>https://quantadude.github.io/dev-roop-blog/posts/test2/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dev-roop-blog/categories/typescript/</loc>
+    <loc>https://quantadude.github.io/dev-roop-blog/categories/typescript/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dev-roop-blog/posts/how-i-create-ts-apps/</loc>
+    <loc>https://quantadude.github.io/dev-roop-blog/posts/how-i-create-ts-apps/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dev-roop-blog/resume/</loc>
+    <loc>https://quantadude.github.io/dev-roop-blog/resume/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dev-roop-blog/tags/c&#43;&#43;/</loc>
+    <loc>https://quantadude.github.io/dev-roop-blog/tags/c&#43;&#43;/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dev-roop-blog/tags/help-me/</loc>
+    <loc>https://quantadude.github.io/dev-roop-blog/tags/help-me/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dev-roop-blog/notes/</loc>
+    <loc>https://quantadude.github.io/dev-roop-blog/notes/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dev-roop-blog/notes/test-note-678/</loc>
+    <loc>https://quantadude.github.io/dev-roop-blog/notes/test-note-678/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dev-roop-blog/categories/vulkan/</loc>
+    <loc>https://quantadude.github.io/dev-roop-blog/categories/vulkan/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/dev-roop-blog/</loc>
+    <loc>https://quantadude.github.io/dev-roop-blog/</loc>
     <lastmod>2026-01-11T10:49:45+05:30</lastmod>
   </url>
 </urlset>

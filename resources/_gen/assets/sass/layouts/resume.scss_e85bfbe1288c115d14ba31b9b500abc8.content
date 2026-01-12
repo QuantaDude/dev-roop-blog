@@ -145,6 +145,8 @@ main.resume article .content ul li, main.resume article .content ol li {
 }
 main.resume article .content p {
   margin-bottom: 1rem;
+  text-align: justify !important;
+  hyphens: auto !important;
 }
 main.resume article .content strong {
   color: var(--text-color);

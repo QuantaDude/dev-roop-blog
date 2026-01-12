@@ -34,12 +34,13 @@ main.resume {
   background: var(--bg);
   color: var(--fg);
   max-width: 100% !important;
+  min-height: 100vh;
+  width: 100%;
 
   article {
     max-width: 800px;
-    margin: 0 2rem;
-    padding: 0 0;
-    
+  margin: 0 auto;
+  padding: 2.5rem 2rem;;    
     header {
       text-align: center;
       border-bottom: 2px solid var(--fg4);
@@ -134,7 +135,8 @@ main.resume {
 }
 @page {
   size: A4;
-  margin: 14mm;
+  margin: 0;
+  background: #282828;
 }
 
 @media print {
@@ -146,5 +148,12 @@ main.resume {
   main.resume {
     box-shadow: none;
   }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #282828;
 }
 

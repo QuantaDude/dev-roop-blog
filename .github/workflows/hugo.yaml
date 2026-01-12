@@ -92,7 +92,14 @@ jobs:
       - name: Generate PDF
         run: |
           mkdir -p public/files
-          python3 -m weasyprint --base-url file://$PWD/public/ public/resume/index.html public/files/resume.pdf
+          # Copy the resume HTML and fix the paths
+          cp public/resume/index.html /tmp/resume-for-pdf.html
+          # Replace /dev-roop-blog/ with relative paths from public/
+          sed -i 's|/dev-roop-blog/|../|g' /tmp/resume-for-pdf.html
+          # Generate PDF from the modified HTML
+          cd public/resume
+          python3 -m weasyprint /tmp/resume-for-pdf.html ../files/resume.pdf
+          cd ../..
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v4

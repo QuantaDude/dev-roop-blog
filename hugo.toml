@@ -1,4 +1,3 @@
-# baseURL = "https://blog.devroop.site"
 baseURL = "https://quantadude.github.io/dev-roop-blog/"
 disqusShortname = ""
 enableGitInfo = true 

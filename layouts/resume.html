@@ -1,0 +1,64 @@
+{{ define "head" }}
+{{ $options := dict "transpiler" "dartsass" "targetPath" "css/resume.css" }}
+{{ with resources.Get "sass/layouts/resume.scss" | toCSS $options | postCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+{{ end }}
+
+{{ define "main" }}
+<main id="main" class="resume">
+  <article>
+    <header>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.subtitle }}
+      <p class="subtitle">{{ . }}</p>
+      {{ end }}
+      
+      <div class="contact-info">
+        {{ with .Params.location }}
+        <p><strong>{{ . }}</strong></p>
+        {{ end }}
+        
+        <p>
+          {{ with .Params.phone }}📱 {{ . }}{{ end }}
+          {{ if and .Params.phone .Params.email }} | {{ end }}
+          {{ with .Params.email }}🖂 <a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+        </p>
+        
+        <p>
+          {{ with .Params.portfolio }}<a href="{{ . }}">Portfolio</a>{{ end }}
+          {{ if and .Params.portfolio .Params.github }} | {{ end }}
+          {{ with .Params.github }}<a href="{{ . }}">My GitHub</a>{{ end }}
+          {{ if and .Params.github .Params.linkedin }} | {{ end }}
+          {{ with .Params.linkedin }}<a href="https://linkedin.com/in/{{ . }}">My LinkedIn</a>{{ end }}
+        </p>
+        
+        {{ with .Params.techstack }}
+        <p class="tech-stack"><strong>Tech Stack:</strong> {{ . }}</p>
+        {{ end }}
+      </div>
+      
+      {{ with .Date }}
+      <time>Last updated: {{ .Format "January 2, 2006" }}</time>
+      {{ end }}
+    </header>
+
+    <div class="content">
+      {{ .Content | safeHTML }}
+    </div>
+
+    {{ with .Params.download }}
+    <div class="resume-download">
+      <a href="{{ . }}" class="download-button" download>
+        <svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+          <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/>
+          <path d="M12,12a1,1,0,0,0,1-1V7a1,1,0,0,0-2,0v4A1,1,0,0,0,12,12Z"/>
+          <path d="M12,13a1,1,0,0,0-1,1v.38L10.71,14.5a1,1,0,0,0-1.42,1.41L11.59,18a1,1,0,0,0,.7.29h0a1,1,0,0,0,.71-.29l2.29-2.09A1,1,0,0,0,13.71,14.5L13,14.38V14A1,1,0,0,0,12,13Z"/>
+        </svg>
+        Download PDF
+      </a>
+    </div>
+    {{ end }}
+  </article>
+</main>
+{{ end }}

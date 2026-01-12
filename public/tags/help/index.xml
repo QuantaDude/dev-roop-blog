@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Help on On Software — Dev Roop</title>
+    <link>http://localhost:1313/dev-roop-blog/tags/help/</link>
+    <description>Recent content in Help on On Software — Dev Roop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 11 Jan 2026 18:51:40 +0530</lastBuildDate><atom:link href="http://localhost:1313/dev-roop-blog/tags/help/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

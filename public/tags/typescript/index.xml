@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TypeScript on On Software — Dev Roop</title>
+    <link>http://localhost:1313/dev-roop-blog/tags/typescript/</link>
+    <description>Recent content in TypeScript on On Software — Dev Roop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 10 Jan 2026 15:17:40 +0530</lastBuildDate><atom:link href="http://localhost:1313/dev-roop-blog/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My &#34;Opionated&#34; Way of Making TypeScript Applications</title>
+      <link>http://localhost:1313/dev-roop-blog/posts/how-i-create-ts-apps/</link>
+      <pubDate>Sat, 10 Jan 2026 15:17:40 +0530</pubDate>
+      
+      <guid>http://localhost:1313/dev-roop-blog/posts/how-i-create-ts-apps/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In this article, I&amp;rsquo;ll share what I&amp;rsquo;ve been learning for the past one year - which is how to create &lt;strong&gt;clean&lt;/strong&gt;, easy to &lt;strong&gt;test&lt;/strong&gt; TypeScript back-end code.
+If you&amp;rsquo;re someone who is about to get into web development, specifically back-end or someone who has made one or two projects using express.js, then this article is for you.&lt;/p&gt;
+&lt;h2 id=&#34;why-this-article-and-whats-in-it&#34;&gt;Why this article? and what&amp;rsquo;s in it?&lt;/h2&gt;
+&lt;p&gt;I am writing this article because I care about my craft, how I make software. If you do that too, then you&amp;rsquo;re free to read along.
+This article also partly serves me as a note which I can refer to from time to time.&lt;/p&gt;
+&lt;p&gt;This is &lt;strong&gt;not&lt;/strong&gt; an end to end tutorial. I&amp;rsquo;ll go over workspaces, project configuration, the actual development, which also includes functional composition, closures, how to think about what you&amp;rsquo;re making, and then lastly testing.&lt;/p&gt;
+&lt;p&gt;But first&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;what-not-to-do&#34;&gt;What not to do&lt;/h2&gt;
+&lt;h3 id=&#34;--start-off-by-using-a-framework&#34;&gt;- Start off by using a framework&lt;/h3&gt;
+&lt;p&gt;Beginners are susceptible to this mistake, most are. I am not saying that frameworks are bad, they make developing big projects a bit easier. If you do end up starting off learning a framework, ask yourself &amp;ldquo;why is it done this way?&amp;rdquo;.
+But most Beginners do not do this, what they do is&amp;hellip;.&lt;/p&gt;
+&lt;h3 id=&#34;--keep-watching-tutorials-endlessly&#34;&gt;- Keep watching tutorials endlessly&lt;/h3&gt;
+&lt;p&gt;Most students fall into this &amp;rsquo;trap&amp;rsquo; through a grapevine, they hear that a certain YouTube tutorial or a paid course is great, and they pick it up, they keep following it. Unless it&amp;rsquo;s a tutorial about a concept which is alien to you; don&amp;rsquo;t watch it.
+On top  of watching those tutorials about some programming language or frameworks, most beginners&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;--do-not-learn-to-use-the-tools-better&#34;&gt;- Do not learn to use the tools better&lt;/h3&gt;
+&lt;p&gt;What tools you might ask?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Your IDE.&lt;/li&gt;
+&lt;li&gt;Knowledge of computer networks, security.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Trust me, learning to navigate a big codebase goes a long way, and you learn much more than some tutorial. Learn how you can jump to a symbol. VS Code has built in TypeScript support but I encourage you to move to a keyboard centric editor or atleast a better IDE. If you have extra time, I recommend Neovim.&lt;/p&gt;
+&lt;h3 id=&#34;--have-ai-in-your-ide&#34;&gt;- Have AI in your IDE&lt;/h3&gt;
+&lt;p&gt;Instead of having AI directly write your code in your IDE, I recommend querying them for ideas, and ways to approach a given problem. See what it writes and try to understand what it is doing.
+They are trained on stack overflow and other forums data, but you shouldn&amp;rsquo;t blindly trust them, cross check what the LLM says with other sources.&lt;/p&gt;
+&lt;p&gt;I suggest you to &lt;strong&gt;remove them&lt;/strong&gt; from your IDE immediately.&lt;/p&gt;
+&lt;h2 id=&#34;workspaces&#34;&gt;Workspaces&lt;/h2&gt;
+&lt;p&gt;If you&amp;rsquo;ve made a project with atleast one dependency like express.js, then you&amp;rsquo;ve probably used npm or yarn or pnpm.
+You initialize your workspace my running the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm init
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;What this does is create a package.json in your directory after it prompts you for some inputs. When you write your code in your IDE, it looks for all the symbols within this root directory.&lt;/p&gt;
+&lt;p&gt;While this is good for small projects, what I recommend doing is creating workspaces; a monorepo. A monorepo contains more than one &amp;lsquo;package&amp;rsquo;.
+I recommend you to use the &lt;a href=&#34;https://pnpm.io/&#34;&gt;pnpm package manager&lt;/a&gt; to manage your monorepo and dependencies, it&amp;rsquo;s much faster than npm and can potentially save you a lot of disk space.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;npm command&lt;/th&gt;
+          &lt;th&gt;pnpm command&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;npm init&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;pnpm init&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;npm install&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;pnpm install&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;npm i &amp;lt;pkg&amp;gt;&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;pnpm add &amp;lt;pkg&amp;gt;&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;npm run &amp;lt;cmd&amp;gt;&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;pnpm &amp;lt;cmd&amp;gt;&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The directory which you&amp;rsquo;ve created after &lt;code&gt;npm init&lt;/code&gt; or &lt;code&gt;pnpm init&lt;/code&gt; is the workspace root. notice that inside the package.json, the scripts contains all the commands you can run using the &lt;code&gt;pnpm &amp;lt;cmd&amp;gt;&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;Obviously to create sub-workspaces, you need directories.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;monorepo-root/
+├── apps/         //(packages)
+│   ├── front-end/
+│   │   ├── src/
+│   │   └── package.json
+│   │   
+│   └── back-end/
+│       ├── src/
+│       └── package.json
+├── common/
+│   ├── src/
+│   └── package.json
+├── package.json
+└── README.md
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After you&amp;rsquo;ve this monorepo structure, create a file called &lt;code&gt;pnpm-workspace.yaml&lt;/code&gt; in the root of your workspace directory and add the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;packages&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;#all direct sub-directories / folders under apps will be a package&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;app/*&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# the common package will be shared among the app packages&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;common&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;
+&lt;p&gt;In this example we will be using &lt;a href=&#34;https://katex.org/&#34;&gt;$\KaTeX$&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a partial under &lt;code&gt;/layouts/partials/math.html&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Within this partial reference the &lt;a href=&#34;https://katex.org/docs/autorender.html&#34;&gt;Auto-render Extension&lt;/a&gt; or host these scripts locally.&lt;/li&gt;
+&lt;li&gt;Include the partial in your templates like so:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; or .Params.math .Site.Params.math &lt;span style=&#34;color:#f92672&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{{&lt;/span&gt; partial &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;math.html&amp;#34;&lt;/span&gt; . &lt;span style=&#34;color:#f92672&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{{&lt;/span&gt; end &lt;span style=&#34;color:#f92672&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;To enable $\KaTeX$ globally set the parameter &lt;code&gt;math&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; in a project&amp;rsquo;s configuration&lt;/li&gt;
+&lt;li&gt;To enable $\KaTeX$ on a per page basis include the parameter &lt;code&gt;math: true&lt;/code&gt; in content files&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Use the online reference of &lt;a href=&#34;https://katex.org/docs/supported.html&#34;&gt;Supported $\TeX$ Functions&lt;/a&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Block math:
+$$
+\mathcal L_{\mathcal T}(\vec{\lambda})
+= \sum_{(\mathbf{x},\mathbf{s})\in \mathcal T}
+\log P(\mathbf{s}\mid\mathbf{x}) - \sum_{i=1}^m
+\frac{\lambda_i^2}{2\sigma^2}
+$$&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

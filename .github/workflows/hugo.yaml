@@ -84,21 +84,15 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
-      - name: Install wkhtmltopdf
-        run: sudo apt-get install -y wkhtmltopdf
+      - name: Install weasyprint
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip python3-cffi python3-brotli libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0
+          pip3 install weasyprint
       - name: Generate PDF
         run: |
           mkdir -p public/files
-          cd public
-          wkhtmltopdf \
-            --enable-local-file-access \
-            --print-media-type \
-            --no-stop-slow-scripts \
-            --javascript-delay 1000 \
-            --disable-javascript \
-            resume/index.html \
-            files/resume.pdf
-          cd ..
+          python3 -m weasyprint --base-url file://$PWD/public/ public/resume/index.html public/files/resume.pdf
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v4

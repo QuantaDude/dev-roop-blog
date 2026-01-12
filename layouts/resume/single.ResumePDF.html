@@ -1,0 +1,22 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  {{/* Load ONLY resume CSS */}}
+  {{ $options := dict "transpiler" "dartsass" "targetPath" "css/resume-pdf.css" }}
+  {{ with resources.Get "sass/layouts/resume.scss" | toCSS $options | postCSS }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{ end }}
+</head>
+
+  <main id="main" class="resume">
+    <article>
+      {{/* reuse the same markup */}}
+      {{ partial "resume-content.html" . }}
+    </article>
+  </main>
+</html>
+

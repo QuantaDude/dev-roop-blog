@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on On Software — Dev Roop</title>
-    <link>https://quantadude.github.io/dev-roop-blog/tags/</link>
+    <link>http://localhost:1313/dev-roop-blog/tags/</link>
     <description>Recent content in Tags on On Software — Dev Roop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 11 Jan 2026 19:17:44 +0530</lastBuildDate><atom:link href="https://quantadude.github.io/dev-roop-blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jan 2026 19:17:44 +0530</lastBuildDate><atom:link href="http://localhost:1313/dev-roop-blog/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

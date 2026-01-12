@@ -92,7 +92,7 @@ jobs:
       - name: Generate PDF
         run: |
           mkdir -p public/files
-          cp public/resume/index.html public/resume/index-for-pdf.html
+          cp public/resume/resume.pdf.html public/resume/index-for-pdf.html
           sed -i 's|/dev-roop-blog/|../|g' public/resume/index-for-pdf.html
           python3 -m weasyprint public/resume/index-for-pdf.html public/files/resume.pdf
           rm public/resume/index-for-pdf.html

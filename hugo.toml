@@ -19,6 +19,16 @@ category = "categories"
   [caches.images]
     dir = ':cacheDir/images'
 
+[outputFormats]
+  [outputFormats.ResumePDF]
+    mediaType = "text/html"
+    baseName = "resume.pdf"
+    isHTML = true
+    permalinkable = true
+
+[outputs]
+  page = ["HTML", "ResumePDF"]
+
 [[menu.main]]
 identifier = "home"
 name = "Home"

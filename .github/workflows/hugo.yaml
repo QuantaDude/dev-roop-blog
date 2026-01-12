@@ -84,16 +84,6 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
-      - name: Debug - Check public directory
-        run: |
-          echo "Contents of public/:"
-          ls -la public/
-          echo "Contents of public/css/:"
-          ls -la public/css/ || echo "public/css/ does not exist"
-          echo "Contents of public/katex/:"
-          ls -la public/katex/ || echo "public/katex/ does not exist"
-          echo "Checking if resume exists:"
-          ls -la public/resume/ || echo "public/resume/ does not exist"
       - name: Install weasyprint
         run: |
           sudo apt-get update
@@ -102,14 +92,10 @@ jobs:
       - name: Generate PDF
         run: |
           mkdir -p public/files
-          # Copy the resume HTML and fix the paths
-          cp public/resume/index.html /tmp/resume-for-pdf.html
-          # Replace /dev-roop-blog/ with relative paths from public/
-          sed -i 's|/dev-roop-blog/|../|g' /tmp/resume-for-pdf.html
-          # Generate PDF from the modified HTML
-          cd public/resume
-          python3 -m weasyprint /tmp/resume-for-pdf.html ../files/resume.pdf
-          cd ../..
+          cp public/resume/index.html public/resume/index-for-pdf.html
+          sed -i 's|/dev-roop-blog/|../|g' public/resume/index-for-pdf.html
+          python3 -m weasyprint public/resume/index-for-pdf.html public/files/resume.pdf
+          rm public/resume/index-for-pdf.html
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v4

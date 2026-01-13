@@ -20,44 +20,8 @@
       </a>
     </div>
     {{ end }}
-    <header>
-      <h1>{{ .Title }}</h1>
-      {{ with .Params.subtitle }}
-      <p class="subtitle">{{ . }}</p>
-      {{ end }}
-      
-      <div class="contact-info">
-        {{ with .Params.location }}
-        <p><strong>{{ . }}</strong></p>
-        {{ end }}
-        
-        <p>
-          {{ with .Params.phone }}📱 {{ . }}{{ end }}
-          {{ if and .Params.phone .Params.email }} | {{ end }}
-          {{ with .Params.email }}🖂 <a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
-        </p>
-        
-        <p>
-          {{ with .Params.portfolio }}<a href="{{ . }}">Portfolio</a>{{ end }}
-          {{ if and .Params.portfolio .Params.github }} | {{ end }}
-          {{ with .Params.github }}<a href="{{ . }}">My GitHub</a>{{ end }}
-          {{ if and .Params.github .Params.linkedin }} | {{ end }}
-          {{ with .Params.linkedin }}<a href="https://linkedin.com/in/{{ . }}">My LinkedIn</a>{{ end }}
-        </p>
-        
-        {{ with .Params.techstack }}
-        <p class="tech-stack"><strong>Tech Stack:</strong> {{ . }}</p>
-        {{ end }}
-      </div>
-      
-      {{ with .Date }}
-      <time>Last updated: {{ .Format "January 2, 2006" }}</time>
-      {{ end }}
-    </header>
+ {{ partial "resume-content.html" . }}
 
-    <div class="content">
-      {{ .Content | safeHTML }}
-    </div>
 
 
   </article>

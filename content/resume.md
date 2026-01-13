@@ -4,9 +4,9 @@ subtitle: "Software Development Engineer · Back-End Developer"
 layout: "resume"
 date: 2025-10-13
 location: "Noida, Gautam Buddha Nagar, Uttar Pradesh, 201306, India"
-phone: "(+91) 73-0321-3643"
+phone: "(+91) 89-2974-1066"
 email: "abhirup27022001@outlook.com"
-portfolio: "https://portfolio-phi-taupe-95.vercel.app/"
+portfolio: "https://quantadude.github.io/dev-roop-blog"
 github: "https://github.com/quantadude"
 linkedin: "https://linkedin.com/in/abroop27"
 techstack: "TypeScript | C++ | Node.js | JavaScript | Nest.js | Redis | BullMQ | AWS | PostgreSQL | React"
@@ -15,23 +15,22 @@ download: "/files/resume.pdf"
 
 ## Summary
 
-Master of Computer Applications graduate with hands-on experience as a Back-End Intern, where I developed an elastic rescheduling algorithm for stream and wave scheduling systems in healthcare services. Strong foundation in back-end development, computer networks, and algorithms. Currently strengthening my problem solving skills and knowledge of Data Structures and Algorithms.
-
-Interested in computer graphics, developing effective problem-solving approaches for complex tasks, and exploring new technologies and tools. Active contributor to tech communities with a focus on knowledge sharing and collaboration.
-
+Master of Computer Applications graduate with hands-on experience as a Back-End Intern, where I developed an elastic rescheduling algorithm for stream and wave scheduling systems in healthcare services.
+Active contributor to tech communities with a focus on knowledge sharing and collaboration. Strong foundation in back-end development, computer networks, and algorithms. 
+Interested in computer graphics, exploring new technologies and tools. 
 ## Work Experience
 
 ### Back End Intern
 **PerlThoughts** | *Tamil Nadu, India* | July 2025 - August 2025
 
-- Designed and implemented an API using TypeScript and Nest.js which lets patients book appointments with doctors
-- The API was designed to have as few endpoints as possible, ensuring strong validation rules, flexibility, and consistent naming conventions for queries and mutable request bodies
-- Implemented an algorithm which reschedules appointments if the doctor decides to change his working schedule for a particular date or day or has an emergency. The algorithm was designed to automate a lot of the process done by a clinic staff
+- Designed and implemented an API using TypeScript and Nest.js which lets patients book appointments with doctors through a front-end.
+- The API was designed to have as few endpoints as possible, ensuring strong validation rules, flexibility, and consistent naming conventions for queries and mutable request bodies between the front-end and back-end.
+- Implemented an algorithm which reschedules appointments if the doctor decides to change his working schedule for a particular date or day or has an emergency. The algorithm was designed to automate a lot of the process done by a clinic staff.
 
 ## Competitions
 
 ### IGDC BYOG 2025 Game Jam
-**C++, Raylib, Emscripten** | *October 9-12, 2025* | [Submission Link](https://github.com/abhirup27)
+**C++, Raylib, Emscripten** | *October 9-12, 2025* | [Submission Link](https://itch.io/jam/byog/rate/3953906)
 
 - Built a top-down survival game called Cavesweeper during a 72-hour jam
 - Implemented procedural map generation using random noise and cellular automata
@@ -40,13 +39,21 @@ Interested in computer graphics, developing effective problem-solving approaches
 
 ## Projects
 
+### Taant Tantra - Full-stack E-commerce App 
+**React Router, TypeScript, Express.js, REST API, Supabase, PostgreSQL, Vite, Razorpay API, Shiprocket, Figma** | *December 2025 - Ongoing* | [GitHub](https://github.com/quantadude/taant-tantra-ecommerce)
+
+- Developing a complete solution for a small business selling clothes.
+- Designed a store homepage, administrator dashboard and controls using figma.
+- Used React Router for the front-end server with SSR.
+- Using Shiprocket API in back-end server to detect shipping feasibility, select the most profitable shipping rates.
+- Using Razorpay API in back-end server for payments, process refunds, generate invoices, and payments automation to manufacturers using webhooks. 
+
 ### Algorithm Visualizer
-**C++, WASM, JavaScript, WebGL** | *September 2025 - Ongoing* | [GitHub](https://github.com/abhirup27)
+**C++, WASM, JavaScript, WebGL** | *September 2025 - October 2025* | [GitHub](https://github.com/abhirup27)
 
 - Developing an interactive algorithm visualizer using C++, Web Assembly, and JavaScript
 - Currently supports building trees and graphs with DFS or BFS search algorithms
 - Visualizer shows each node and edge by drawing shapes on the HTML canvas, stepping through the algorithm and highlighting specific nodes
-- The final goal is to visualize more complex algorithms like convex hull for travelling salesman problem and similar problems, have seamless interactivity with larger trees and graph structures in the 2D space using a quadtree or R-tree
 
 ### Shopify Inventory Management App
 **TypeScript, Node.js, Nest.js, Redis, BullMQ, GraphQL, PostgreSQL, JWT** | *January 2025 - June 2025* | [GitHub](https://github.com/abhirup27)
@@ -57,13 +64,6 @@ Interested in computer graphics, developing effective problem-solving approaches
 - Implemented a credits-based system where store admins can buy credits through the Shopify payments gateway
 - Used Redis to cache frequently requested data
 - Implemented role-based authorization and JWT-based authentication
-
-### Pomodoro App Chrome Extension
-**React, TypeScript, Chrome API, Vite** | *June 2025 - July 2025* | [GitHub](https://github.com/abhirup27)
-
-- Deployed the app to Chrome extension store
-- Used Chrome's API and storage to maintain state, handle various events in the popup menu and have persistent storage
-- The app can take all the parameters required for a pomodoro timer and the user can update the settings during a session
 
 ### Golf Tournament App
 **JavaScript, Fetch API, Node.js, Express.js, EJS, Tailwind CSS** | *January 2025* | [GitHub](https://github.com/abhirup27)

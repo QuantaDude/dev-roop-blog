@@ -5,8 +5,7 @@ title = 'Test Note hello 3 5 6'
 description = "A guide to TypeScript development."
 categories = ["vulkan"]
 tags = [
-  "c++",
-  "help me"
+  "c++"
 ]
 +++
 # This is not a teste

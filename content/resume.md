@@ -49,14 +49,14 @@ Interested in computer graphics, exploring new technologies and tools.
 - Using Razorpay API in back-end server for payments, process refunds, generate invoices, and payments automation to manufacturers using webhooks. 
 
 ### Algorithm Visualizer
-**C++, WASM, JavaScript, WebGL** | *September 2025 - October 2025* | [GitHub](https://github.com/abhirup27)
+**C++, WASM, JavaScript, WebGL** | *September 2025 - October 2025* | [GitHub](https://github.com/QuantaDude/algo-visualizer)
 
 - Developing an interactive algorithm visualizer using C++, Web Assembly, and JavaScript
 - Currently supports building trees and graphs with DFS or BFS search algorithms
 - Visualizer shows each node and edge by drawing shapes on the HTML canvas, stepping through the algorithm and highlighting specific nodes
 
 ### Shopify Inventory Management App
-**TypeScript, Node.js, Nest.js, Redis, BullMQ, GraphQL, PostgreSQL, JWT** | *January 2025 - June 2025* | [GitHub](https://github.com/abhirup27)
+**TypeScript, Node.js, Nest.js, Redis, BullMQ, GraphQL, PostgreSQL, JWT** | *January 2025 - June 2025* | [GitHub](https://github.com/QuantaDude/shopify_app)
 
 - Developed an app which automates processes for managing Shopify stores
 - Handled sync and mutation operations by creating background jobs using message queues
@@ -66,7 +66,7 @@ Interested in computer graphics, exploring new technologies and tools.
 - Implemented role-based authorization and JWT-based authentication
 
 ### Golf Tournament App
-**JavaScript, Fetch API, Node.js, Express.js, EJS, Tailwind CSS** | *January 2025* | [GitHub](https://github.com/abhirup27)
+**JavaScript, Fetch API, Node.js, Express.js, EJS, Tailwind CSS** | *January 2025* | [GitHub](https://github.com/QuantaDude/golf-tournament-app)
 
 - Developed an app which was used in a golf tournament of 72 players using Stableford scoring system to calculate scores
 - The app helped judges and the admin facilitate the tournament and let players update their strokes and have judges verify the scores
@@ -89,7 +89,7 @@ Interested in computer graphics, exploring new technologies and tools.
 ## Git Contributions 
 
 ### 2D Community Game
-**C++ Developer** | *July 2024 - August 2024* | [GitHub](https://github.com/abhirup27)
+**C++ Developer** | *July 2024 - August 2024* | [GitHub](https://github.com/meemknight/lowestleveldungeon)
 
 - Contributed to a GitHub community repository
 - Implemented procedural map generation using cellular automata

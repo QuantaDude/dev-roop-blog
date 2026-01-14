@@ -1,6 +1,6 @@
 +++
 date = '2026-01-10T15:17:40+05:30'
-draft = false 
+draft = true 
 title = 'My "Opionated" Way of Making TypeScript Applications'
 description = "A guide to TypeScript development."
 categories = ["TypeScript"]

@@ -2,20 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://quantadude.github.io/dev-roop-blog/resume/</loc>
+    <lastmod>2026-01-14T19:14:53+05:30</lastmod>
+  </url><url>
     <loc>https://quantadude.github.io/dev-roop-blog/categories/</loc>
-    <lastmod>2026-01-12T11:05:35+05:30</lastmod>
+    <lastmod>2026-01-14T19:14:53+05:30</lastmod>
   </url><url>
     <loc>https://quantadude.github.io/dev-roop-blog/tags/functional-composition/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
     <loc>https://quantadude.github.io/dev-roop-blog/posts/</loc>
-    <lastmod>2026-01-12T11:05:35+05:30</lastmod>
+    <lastmod>2026-01-14T19:14:53+05:30</lastmod>
   </url><url>
     <loc>https://quantadude.github.io/dev-roop-blog/tags/software/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
     <loc>https://quantadude.github.io/dev-roop-blog/tags/</loc>
-    <lastmod>2026-01-12T11:05:35+05:30</lastmod>
+    <lastmod>2026-01-14T19:14:53+05:30</lastmod>
   </url><url>
     <loc>https://quantadude.github.io/dev-roop-blog/posts/test2/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
@@ -23,20 +26,17 @@
     <loc>https://quantadude.github.io/dev-roop-blog/categories/typescript/</loc>
     <lastmod>2026-01-12T11:05:35+05:30</lastmod>
   </url><url>
-    <loc>https://quantadude.github.io/dev-roop-blog/resume/</loc>
-    <lastmod>2026-01-13T19:29:53+05:30</lastmod>
-  </url><url>
     <loc>https://quantadude.github.io/dev-roop-blog/tags/c&#43;&#43;/</loc>
-    <lastmod>2026-01-12T11:05:35+05:30</lastmod>
+    <lastmod>2026-01-14T19:14:53+05:30</lastmod>
   </url><url>
     <loc>https://quantadude.github.io/dev-roop-blog/notes/</loc>
-    <lastmod>2026-01-12T11:05:35+05:30</lastmod>
+    <lastmod>2026-01-14T19:14:53+05:30</lastmod>
   </url><url>
     <loc>https://quantadude.github.io/dev-roop-blog/notes/test-note-678/</loc>
-    <lastmod>2026-01-12T11:05:35+05:30</lastmod>
+    <lastmod>2026-01-14T19:14:53+05:30</lastmod>
   </url><url>
     <loc>https://quantadude.github.io/dev-roop-blog/categories/vulkan/</loc>
-    <lastmod>2026-01-12T11:05:35+05:30</lastmod>
+    <lastmod>2026-01-14T19:14:53+05:30</lastmod>
   </url><url>
     <loc>https://quantadude.github.io/dev-roop-blog/</loc>
     <lastmod>2026-01-11T10:49:45+05:30</lastmod>

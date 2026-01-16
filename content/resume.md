@@ -2,8 +2,8 @@
 title: "Abhirup Bhattacharyya"
 subtitle: "Software Development Engineer · Back-End Developer"
 layout: "resume"
-date: 2025-10-13
-location: "Noida, Gautam Buddha Nagar, Uttar Pradesh, 201306, India"
+date: 2026-01-16
+location: "Uttar Pradesh, India"
 phone: "(+91) 89-2974-1066"
 email: "abhirup27022001@outlook.com"
 portfolio: "https://quantadude.github.io/dev-roop-blog"
@@ -15,27 +15,48 @@ download: "/files/resume.pdf"
 
 ## Summary
 
-Master of Computer Applications graduate with hands-on experience as a Back-End Intern, where I developed an elastic rescheduling algorithm for stream and wave scheduling systems in healthcare services.
-Active contributor to tech communities with a focus on knowledge sharing and collaboration. Strong foundation in back-end development, computer networks, and algorithms. 
-Interested in computer graphics, exploring new technologies and tools. 
+Master of Computer Applications graduate with hands-on experience in back-end and systems-oriented development. 
+Built production software including scheduling systems for healthcare workflows, browser extensions, and large-scale backend services. 
+Strong foundation in algorithms, computer networks, and distributed system fundamentals. 
+Interested in computer graphics and low-level systems, with a focus on building efficient, reliable software.
+
 ## Work Experience
 
 ### Back End Intern
-**PerlThoughts** | *Tamil Nadu, India* | July 2025 - August 2025
+**PerlThoughts** | *Remote* | July 2025 - August 2025
 
-- Designed and implemented an API using TypeScript and Nest.js which lets patients book appointments with doctors through a front-end.
-- The API was designed to have as few endpoints as possible, ensuring strong validation rules, flexibility, and consistent naming conventions for queries and mutable request bodies between the front-end and back-end.
-- Implemented an algorithm which reschedules appointments if the doctor decides to change his working schedule for a particular date or day or has an emergency. The algorithm was designed to automate a lot of the process done by a clinic staff.
+- Designed and implemented a TypeScript + Nest.js API enabling patients to book doctor appointments via a front-end.
+- Designed the API with minimal endpoints, strong validation, and consistent query and mutation semantics between front-end and back-end.
+- Implemented an automated rescheduling algorithm to handle doctor schedule changes and emergencies, reducing manual clinic staff intervention.
 
-## Competitions
+## Open-Source Contributions
+
+### AI Generated Music Detection API SDK
+**TypeScript, Vitest, PNPM workspaces, NPM** | *December 2025 - January 2026* | [GitHub](https://github.com/TtesseractT/uhmbrella-api)
+
+Made two pull requests in which I:
+- Developed a Software Development Kit for a REST API, handling client initialization, network errors, retries, and response validation.
+- Implemented runtime-safe functions with assertions to ensure received data conforms to expected JSON schemas.
+- Wrote unit tests using vitest; identified and reported a bug in the Jobs API.
+- Designed the SDK to be JavaScript runtime–agnostic, supporting browsers and multiple JS runtimes.
+- Documented exported functions using JSDoc.
+
+<!-- ### 2D Community Game -->
+<!-- **C++** | *July 2024 - August 2024* | [GitHub](https://github.com/meemknight/lowestleveldungeon) -->
+<!---->
+<!-- - Contributed to a GitHub community repository -->
+<!-- - Implemented procedural map generation using cellular automata -->
+<!-- - Implemented tile placement logic -->
+
+## Hackathons and Competitions
 
 ### IGDC BYOG 2025 Game Jam
-**C++, Raylib, Emscripten** | *October 9-12, 2025* | [Submission Link](https://itch.io/jam/byog/rate/3953906)
+**C++, WASM, Raylib, Emscripten** | *October 9-12, 2025* | [Submission Link](https://itch.io/jam/byog/rate/3953906)
 
 - Built a top-down survival game called Cavesweeper during a 72-hour jam
 - Implemented procedural map generation using random noise and cellular automata
 - Implemented spawning, AI pathfinding, and tile-based collision logic
-- Designed escape-spawn balancing algorithm ensuring fair gameplay
+- Designed an escape-spawn balancing algorithm to ensure fair and consistent gameplay progression.
 
 ## Projects
 
@@ -43,35 +64,40 @@ Interested in computer graphics, exploring new technologies and tools.
 **React Router, TypeScript, Express.js, REST API, Supabase, PostgreSQL, Vite, Razorpay API, Shiprocket, Figma** | *December 2025 - Ongoing* | [GitHub](https://github.com/quantadude/taant-tantra-ecommerce)
 
 - Developing a complete solution for a small business selling clothes.
-- Designed a store homepage, administrator dashboard and controls using figma.
+- Designed the store homepage and admin dashboard using Figma.
 - Used React Router for the front-end server with SSR.
-- Using Shiprocket API in back-end server to detect shipping feasibility, select the most profitable shipping rates.
-- Using Razorpay API in back-end server for payments, process refunds, generate invoices, and payments automation to manufacturers using webhooks. 
+- Integrated Shiprocket API to evaluate shipping feasibility and select optimal rates.
+- Integrated Razorpay for payments, refunds, invoice generation, and webhook-driven payment automation.
 
 ### Algorithm Visualizer
 **C++, WASM, JavaScript, WebGL** | *September 2025 - October 2025* | [GitHub](https://github.com/QuantaDude/algo-visualizer)
 
-- Developing an interactive algorithm visualizer using C++, Web Assembly, and JavaScript
-- Currently supports building trees and graphs with DFS or BFS search algorithms
-- Visualizer shows each node and edge by drawing shapes on the HTML canvas, stepping through the algorithm and highlighting specific nodes
+- Built an interactive algorithm visualizer using C++, WebAssembly, and JavaScript.
+- Supports building trees and graphs, and DFS or BFS traversal algorithms
+- Renders nodes and edges on an HTML canvas, stepping through algorithms and highlighting execution states.
 
 ### Shopify Inventory Management App
 **TypeScript, Node.js, Nest.js, Redis, BullMQ, GraphQL, PostgreSQL, JWT** | *January 2025 - June 2025* | [GitHub](https://github.com/QuantaDude/shopify_app)
 
 - Developed an app which automates processes for managing Shopify stores
-- Handled sync and mutation operations by creating background jobs using message queues
-- Cron jobs run during restarts and intervals to sync data between Redis cache and Postgres database, and for periodically syncing data from Shopify server
-- Implemented a credits-based system where store admins can buy credits through the Shopify payments gateway
-- Used Redis to cache frequently requested data
-- Implemented role-based authorization and JWT-based authentication
+- Implemented background processing using Redis and BullMQ for sync and mutation workflows.
+- Designed cron-based jobs to ensure consistency between Redis cache, PostgreSQL, and Shopify APIs.
+- Built a credits-based billing system integrated with Shopify Payments.
+- Implemented role-based authorization and JWT-based authentication.
+
+### Productivity Timer Chrome Extension (React)
+**React, TypeScript, Chrome API, Vite** | June 2025 - July 2025 | [Chrome Extension](https://chromewebstore.google.com/detail/tomato-timer/ncllalegdjcfkajbppdfbiejifkiddbl) | [GitHub](https://github.com/QuantaDude/pomodoro-react-app/tree/chrome-extension)
+- Built and deployed a Pomodoro-style productivity timer as a Chrome extension using React
+- Managed accurate timer lifecycle using useEffect and useRef, handling pause/resume and background execution
+- Persisted user settings and session state using Chrome Storage API
 
 ### Golf Tournament App
 **JavaScript, Fetch API, Node.js, Express.js, EJS, Tailwind CSS** | *January 2025* | [GitHub](https://github.com/QuantaDude/golf-tournament-app)
 
 - Developed an app which was used in a golf tournament of 72 players using Stableford scoring system to calculate scores
 - The app helped judges and the admin facilitate the tournament and let players update their strokes and have judges verify the scores
-- Allowed players to calculate their handicap during registration
-- Features four endpoints: score table, admin page, login/registration, and players endpoint
+- Allowed players to calculate their handicap during registration.
+- Designed a role-based system for players, judges, and administrators to manage tournament scoring.
 - Handled race conditions in cases where the admin and a player were editing the same value during the match
 - Score table used fetch API to update scores in fixed intervals
 - Made an easy to use, clean UI using Tailwind
@@ -85,15 +111,6 @@ Interested in computer graphics, exploring new technologies and tools.
 ### Bachelor of Computer Applications
 **Greater Noida Institute of Management** | *Greater Noida, Uttar Pradesh* | August 2019 - June 2022
 - Percentage: 65.47%
-
-## Git Contributions 
-
-### 2D Community Game
-**C++ Developer** | *July 2024 - August 2024* | [GitHub](https://github.com/meemknight/lowestleveldungeon)
-
-- Contributed to a GitHub community repository
-- Implemented procedural map generation using cellular automata
-- Implemented tile placement logic
 
 ## Certificates
 

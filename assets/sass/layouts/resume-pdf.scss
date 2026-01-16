@@ -86,12 +86,27 @@ main.resume {
         padding-bottom: 0.4rem;
         font-size: 1.7rem;
       }
+  h2 {
+    margin-bottom: 0.6rem;
+  }
 
+  h2 + p {
+    margin-top: 0.3rem;
+  }
+
+  h2 + h3 {
+    margin-top: 0.6rem;
+  }
       h3 {
-        font-size: 1.3rem;
-        margin-top: 1.2rem;
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
+    margin-bottom: 0.3rem;
       }
 
+  h3 + p {
+    margin-top: 0.2rem;
+      }
+      
       p,
       li {
         text-align: justify;

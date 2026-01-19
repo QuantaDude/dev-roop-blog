@@ -15,7 +15,7 @@
         <p>
           {{ with .Params.phone }}{{ . }}{{ end }}
           {{ if and .Params.phone .Params.email }} | {{ end }}
-          {{ with .Params.email }}🖂 <a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+          {{ with .Params.email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
         </p>
         
         <p>

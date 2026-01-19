@@ -23,7 +23,7 @@ Interested in computer graphics and low-level systems, with a focus on building 
 ## Work Experience
 
 ### Back End Intern
-**PerlThoughts** | *Remote* | July 2025 - August 2025
+**PerlThoughts** | *Remote* | July 2025 - August 2025 | [Certificate](https://www.linkedin.com/in/abroop/overlay/1768791489146/single-media-viewer/?profileId=ACoAADBdaAcBNc2_QYAInFmz8sQhSshZ3Y2uUo8)
 
 - Designed and implemented a TypeScript + Nest.js API enabling patients to book doctor appointments via a front-end.
 - Designed the API with minimal endpoints, strong validation, and consistent query and mutation semantics between front-end and back-end.

@@ -16,7 +16,7 @@ download: "/files/resume.pdf"
 ## Summary
 
 Master of Computer Applications graduate with hands-on experience in back-end and systems-oriented development. 
-Built production software including scheduling systems for healthcare workflows, browser extensions, and large-scale backend services. 
+Built production software including scheduling systems for healthcare workflows, browser extensions, and Software Development Kit for an AI music detection back-end. 
 Strong foundation in algorithms, computer networks, and distributed system fundamentals. 
 Interested in computer graphics and low-level systems, with a focus on building efficient, reliable software.
 

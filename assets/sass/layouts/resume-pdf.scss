@@ -67,10 +67,11 @@ main.resume {
       .subtitle {
         color: var(--secondary-text-color);
         font-size: 1rem;
+        margin-top: -0.6rem;
       }
 
       .contact-info {
-        margin: 1rem;
+        margin-top: 1rem;
       }
 
       time {
@@ -124,7 +125,7 @@ main.resume {
       }
       ul,
       ol {
-        margin-left: 1.4rem;
+        margin-left: 1.2rem;
       }
 
       strong {

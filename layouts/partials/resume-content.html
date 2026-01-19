@@ -3,12 +3,12 @@
       {{ with .Params.subtitle }}
       <p class="subtitle">{{ . }}</p>
       {{ end }}
-      
-      <div class="contact-info">
-        {{ with .Params.techstack }}
+      {{ with .Params.techstack }}
         <p class="tech-stack"><strong>Tech Stack:</strong> {{ . }}</p>
         {{ end }}
-        {{ with .Params.location }}
+ 
+      <div class="contact-info">
+               {{ with .Params.location }}
         <p><strong>{{ . }}</strong></p>
         {{ end }}
         

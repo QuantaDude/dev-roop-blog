@@ -70,14 +70,14 @@ Made two pull requests in which I:
 - Integrated Razorpay for payments, refunds, invoice generation, and webhook-driven payment automation.
 
 ### Algorithm Visualizer
-**C++, WASM, JavaScript, WebGL** | *September 2025 - October 2025* | [GitHub](https://github.com/QuantaDude/algo-visualizer)
+**C++, WASM, JavaScript, WebGL** | [GitHub](https://github.com/QuantaDude/algo-visualizer)
 
 - Built an interactive algorithm visualizer using C++, WebAssembly, and JavaScript.
 - Supports building trees and graphs, and DFS or BFS traversal algorithms
 - Renders nodes and edges on an HTML canvas, stepping through algorithms and highlighting execution states.
 
 ### Shopify Inventory Management App
-**TypeScript, Node.js, Nest.js, Redis, BullMQ, GraphQL, PostgreSQL, JWT** | *January 2025 - June 2025* | [GitHub](https://github.com/QuantaDude/shopify_app)
+**TypeScript, Node.js, Nest.js, Redis, BullMQ, GraphQL, PostgreSQL, JWT** | [GitHub](https://github.com/QuantaDude/shopify_app)
 
 - Developed an app which automates processes for managing Shopify stores
 - Implemented background processing using Redis and BullMQ for sync and mutation workflows.
@@ -86,13 +86,13 @@ Made two pull requests in which I:
 - Implemented role-based authorization and JWT-based authentication.
 
 ### Productivity Timer Chrome Extension (React)
-**React, TypeScript, Chrome API, Vite** | June 2025 - July 2025 | [Chrome Extension](https://chromewebstore.google.com/detail/tomato-timer/ncllalegdjcfkajbppdfbiejifkiddbl) | [GitHub](https://github.com/QuantaDude/pomodoro-react-app/tree/chrome-extension)
+**React, TypeScript, Chrome API, Vite** | [Chrome Extension](https://chromewebstore.google.com/detail/tomato-timer/ncllalegdjcfkajbppdfbiejifkiddbl) | [GitHub](https://github.com/QuantaDude/pomodoro-react-app/tree/chrome-extension)
 - Built and deployed a Pomodoro-style productivity timer as a Chrome extension using React
 - Managed accurate timer lifecycle using useEffect and useRef, handling pause/resume and background execution
 - Persisted user settings and session state using Chrome Storage API
 
 ### Golf Tournament App
-**JavaScript, Fetch API, Node.js, Express.js, EJS, Tailwind CSS** | *January 2025* | [GitHub](https://github.com/QuantaDude/golf-tournament-app)
+**JavaScript, Fetch API, Node.js, Express.js, EJS, Tailwind CSS** | [GitHub](https://github.com/QuantaDude/golf-tournament-app)
 
 - Developed an app which was used in a golf tournament of 72 players using Stableford scoring system to calculate scores
 - The app helped judges and the admin facilitate the tournament and let players update their strokes and have judges verify the scores

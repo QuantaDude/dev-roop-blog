@@ -40,7 +40,7 @@ main.resume {
   article {
     max-width: 800px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
 
     header {
       text-align: center;
@@ -57,7 +57,7 @@ main.resume {
         border: none;
       }
       h1 {
-        font-size: 2.4rem;
+        font-size: 2rem;
       margin-top: 0;
         margin-bottom: 0.4rem;
         color: var(--fg);
@@ -84,7 +84,7 @@ main.resume {
         margin-top: 2rem;
         border-bottom: 1px solid var(--border-color);
         padding-bottom: 0.4rem;
-        font-size: 1.7rem;
+        font-size: 1.4rem;
       }
   h2 {
     margin-bottom: 0.6rem;
@@ -92,27 +92,35 @@ main.resume {
 
   h2 + p {
     margin-top: 0.3rem;
-  }
+   font-size: 0.9rem; 
+      }
 
   h2 + h3 {
     margin-top: 0.6rem;
+        font-size: 1.1rem;
   }
       h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-top: 1.2rem;
     margin-bottom: 0.2rem;
       }
 
   h3 + p {
     margin-top: 0rem;
+        font-size: 0.8rem;
       }
       
       p,
       li {
+        font-size: 0.9rem;
         text-align: justify;
-        hyphens: auto;
+        hyphens: none;
       }
-
+      ul {
+        margin-top: -0.5rem;
+        padding-top: 0rem;
+        // padding-bottom: 1rem;
+      }
       ul,
       ol {
         margin-left: 1.4rem;

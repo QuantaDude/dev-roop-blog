@@ -59,17 +59,18 @@ main.resume {
       h1 {
         font-size: 2rem;
       margin-top: 0;
-        margin-bottom: 0.4rem;
+        padding-bottom: 0rem;
+        margin-bottom: 0.1rem;
         color: var(--fg);
       }
 
       .subtitle {
         color: var(--secondary-text-color);
-        font-size: 1.15rem;
+        font-size: 1rem;
       }
 
-      .contact-info p {
-        margin: 0.3rem 0;
+      .contact-info {
+        margin: 1rem;
       }
 
       time {
@@ -78,7 +79,7 @@ main.resume {
     }
 
     .content {
-      line-height: 1.75;
+      line-height: 1.5;
 
       h2 {
         margin-top: 2rem;

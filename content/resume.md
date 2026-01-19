@@ -99,18 +99,14 @@ Made two pull requests in which I:
 - Allowed players to calculate their handicap during registration.
 - Designed a role-based system for players, judges, and administrators to manage tournament scoring.
 - Handled race conditions in cases where the admin and a player were editing the same value during the match
-- Score table used fetch API to update scores in fixed intervals
-- Made an easy to use, clean UI using Tailwind
 
 ## Education
 
 ### Master of Computer Applications
-**Galgotia's College of Engineering and Technology** | *Greater Noida, Uttar Pradesh* | November 2022 - July 2024
-- CGPA: 8.08
+**Galgotia's College of Engineering and Technology** | *Greater Noida, Uttar Pradesh* | November 2022 - July 2024 | **CGPA: 8.08**
 
 ### Bachelor of Computer Applications
-**Greater Noida Institute of Management** | *Greater Noida, Uttar Pradesh* | August 2019 - June 2022
-- Percentage: 65.47%
+**Greater Noida Institute of Management** | *Greater Noida, Uttar Pradesh* | August 2019 - June 2022 | **Percentage: 65.47%**
 
 ## Certificates
 

@@ -2,14 +2,14 @@
 title: "Abhirup Bhattacharyya"
 subtitle: "Software Development Engineer · Back-End Developer"
 layout: "resume"
-date: 2026-01-16
+date: 2026-01-24
 location: "Uttar Pradesh, India"
 phone: "(+91) 89-2974-1066"
 email: "abhirup27022001@outlook.com"
 portfolio: "https://quantadude.github.io/dev-roop-blog"
 github: "https://github.com/quantadude"
 linkedin: "https://linkedin.com/in/abroop27"
-techstack: "TypeScript | C++ | Node.js | JavaScript | Nest.js | Redis | BullMQ | AWS | PostgreSQL | React"
+techstack: "TypeScript | C++ | WASM | Node.js | JavaScript | Nest.js | Redis | BullMQ | Vitest |  AWS | PostgreSQL | React | Git | Github CI/CD"
 download: "/files/resume.pdf"
 ---
 
@@ -41,13 +41,6 @@ Made two pull requests in which I:
 - Designed the SDK to be JavaScript runtime–agnostic, supporting browsers and multiple JS runtimes.
 - Documented exported functions using JSDoc.
 
-<!-- ### 2D Community Game -->
-<!-- **C++** | *July 2024 - August 2024* | [GitHub](https://github.com/meemknight/lowestleveldungeon) -->
-<!---->
-<!-- - Contributed to a GitHub community repository -->
-<!-- - Implemented procedural map generation using cellular automata -->
-<!-- - Implemented tile placement logic -->
-
 ## Hackathons and Competitions
 
 ### IGDC BYOG 2025 Game Jam
@@ -70,9 +63,9 @@ Made two pull requests in which I:
 - Integrated Razorpay for payments, refunds, invoice generation, and webhook-driven payment automation.
 
 ### Algorithm Visualizer
-**C++, WASM, JavaScript, WebGL** | [GitHub](https://github.com/QuantaDude/algo-visualizer)
+**C++, WASM, JavaScript, WebGL** | [Deployed App](https://quantadude.github.io/algo-visualizer/) | [GitHub](https://github.com/QuantaDude/algo-visualizer)
 
-- Built an interactive algorithm visualizer using C++, WebAssembly, and JavaScript.
+- Built and deployed an interactive algorithm visualizer using C++, WebAssembly, and JavaScript.
 - Supports building trees and graphs, and DFS or BFS traversal algorithms
 - Renders nodes and edges on an HTML canvas, stepping through algorithms and highlighting execution states.
 
@@ -110,5 +103,5 @@ Made two pull requests in which I:
 
 ## Certificates
 
-- **JavaScript** | HackerRank | July 2025 | Certificate ID: 946b9a753cb1
-- **Node.js Developer** | Udemy | June 2023 | Certificate ID: 0010f74970a9
+- **JavaScript** | HackerRank | July 2025 | [Certificate](https://www.hackerrank.com/certificates/946b9a753cb1)
+- **Node.js Developer** | Udemy | June 2023 | Certificate ID: 0010f74970a9 

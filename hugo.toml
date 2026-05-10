@@ -8,6 +8,9 @@ rssLimit = 10
 theme = "texify3"
 title = "Roop's Docs"
 
+[author]
+name = "Abhirup"
+
 [pagination]
 pagerSize = 5
 

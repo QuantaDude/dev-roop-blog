@@ -183,4 +183,13 @@ numberedSubtitles = true
   hackernews = true
   telegram = true
   
-  
+[markup.goldmark.extensions]
+  strikethrough = false  # Disable default strikethrough to avoid conflict with subscript syntax
+
+[markup.goldmark.extensions.extras]
+  [markup.goldmark.extensions.extras.superscript]
+    enable = true
+  [markup.goldmark.extensions.extras.subscript]
+    enable = true
+  [markup.goldmark.extensions.extras.delete]
+    enable = true  # Enable if you still need strikethrough   

@@ -1,0 +1,17 @@
+:root {
+  --bg: #282828;
+  --bg1: #3c3836;
+  --bg2: #504945;
+  --fg: #ebdbb2;
+  --fg2: #d5c4a1;
+  --fg4: #a89984;
+  --orange: #fe8019;
+  --orange-dim: #d65d0e;
+  --yellow: #fabd2f;
+  --border-color: #504945;
+  --text-color: var(--fg);
+  --secondary-text-color: var(--fg4);
+  --link-color: var(--orange);
+  --link-hover-color: var(--orange-dim);
+  --code-bg-color: var(--bg1);
+}

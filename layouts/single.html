@@ -51,6 +51,7 @@
           </svg>
           ~{{.ReadingTime}} {{ .Scratch.Get "timeUnit" }}
         </span>
+      {{ end }}
     </div>
   </div>
 
@@ -102,7 +103,6 @@
     <!-- generic engine -->
     {{ .Site.Params.commentEngine.code | safeHTML }}
   </div>
-  {{ end }}
   {{ end }}
   {{ if .Page.Store.Get "hasMermaid" }}
   <script type="module">

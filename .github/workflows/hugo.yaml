@@ -82,7 +82,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/" \
+            --baseURL "https://quantadude.github.io/dev-roop-blog/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
       - name: Install weasyprint
         run: |

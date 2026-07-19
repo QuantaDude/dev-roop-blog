@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  {{ $options := dict "transpiler" "dartsass" "targetPath" "css/base.css" }}
+  {{ with resources.Get "sass/base.scss" | toCSS $options | postCSS | minify | fingerprint }}<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">{{ end }}
+  {{ range .Site.Params.customCSS }}<link rel="stylesheet" href="{{ . | relURL }}">{{ end }}
+  {{ block "head" . }}{{ end }}
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-title" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+    <nav class="site-nav">
+      {{ range .Site.Menus.main }}<a href="{{ .URL | relURL }}">{{ .Name }}</a>{{ end }}
+    </nav>
+  </header>
+  {{ block "main" . }}{{ end }}
+  <footer class="site-footer">{{ .Site.Params.footnote | safeHTML }}</footer>
+</body>
+</html>

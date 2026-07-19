@@ -1,0 +1,13 @@
+{{ $image := "" }}
+{{ with .Params.image }}{{ $image = . }}{{ end }}
+{{ with .Params.featured_image }}{{ $image = . }}{{ end }}
+{{ with .Params.images }}{{ if gt (len .) 0 }}{{ $image = index . 0 }}{{ end }}{{ end }}
+<a class="post-card" href="{{ .RelPermalink }}" aria-label="{{ .Title }}">
+  <div class="post-card__media{{ if not $image }} post-card__media--placeholder{{ end }}">
+    {{ if $image }}<img src="{{ $image | relURL }}" alt="">{{ end }}
+  </div>
+  <div class="post-card__body">
+    <h3>{{ .Title }}</h3>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format .Site.Params.dateFormat }}</time>
+  </div>
+</a>

@@ -10,84 +10,35 @@
   {{ if .Site.Params.enableDuckDuckGoSearchBox }}
   <div id="searchbox">
     <form method="get" id="ddgSearch" target="_blank" action="https://duckduckgo.com/">
-        <input type="hidden" name="sites" value="{{ .Site.BaseURL }}"/>
-        <input type="hidden" name="kf" value="-1">
-        <input type="hidden" name="kh" value="1">
-        <input type="hidden" name="kae" value="d">
-        <input type="hidden" name="k1" value="-1">
-        <input type="text" name="q" placeholder="Search…" aria-label="Search site on DuckDuckGo"/>
-        <button type="submit">
-          <svg aria-hidden="true" height="1rem" viewBox="0 0 16 16" width="1rem">
-            <path d="M10.68 11.74a6 6 0 1 1-8.98-8.98 6 6 0 0 1 8.98 8.98l3.04 3.04a.75.75 0 0 1-1.06 1.06Z"/>
-          </svg>
-        </button>
+      <input type="hidden" name="sites" value="{{ .Site.BaseURL }}"/>
+      <input type="text" name="q" placeholder="Search…" aria-label="Search site on DuckDuckGo"/>
+      <button type="submit">Search</button>
     </form>
   </div>
   {{ end }}
 
-  {{/* ---------------- TAXONOMY (Category/Tag) PAGE ---------------- */}}
   {{ if .Data.Singular }}
     <h2>{{ .Title }}</h2>
-    {{ $pages := .Pages }}
+    {{ $pages := .Pages.ByDate.Reverse }}
     {{ if gt (len $pages) 0 }}
-      {{ range $pages.GroupByDate "2006-01" }}
-      <div class="post-group">
-        <h3>{{ dateFormat "January 2006" (printf "%s-01" .Key) }}</h3>
-        <ul>
-          {{ range .Pages }}
-          <li>
-            <a class="link" href="{{ .RelPermalink }}">{{ .Title }}</a>
-            <time>{{ .PublishDate.Format .Site.Params.dateFormat }}</time>
-          </li>
-          {{ end }}
-        </ul>
-      </div>
-      {{ end }}
+      <section class="post-grid" aria-label="{{ .Title }}">
+        {{ range $pages }}{{ partial "post-card.html" . }}{{ end }}
+      </section>
     {{ else }}
       <p>No posts found in this category.</p>
     {{ end }}
-
-  {{/* ---------------- NOTES LIST ---------------- */}}
   {{ else if eq .Type "notes" }}
-    {{ range $catName, $cat := .Site.Taxonomies.categories }}
-      {{ $catNotes := where $cat.Pages "Type" "notes" }}
-      {{ if gt (len $catNotes) 0 }}
-      <div class="post-group category-group">
-        <h3>
-          <a href="{{ $cat.Page.RelPermalink }}">{{ $catName }}</a>
-        </h3>
-        <ul>
-          {{ range $catNotes.ByDate.Reverse }}
-          <li>
-            <a class="link" href="{{ .RelPermalink }}">{{ .Title }}</a>
-            <time>{{ .Date.Format .Site.Params.dateFormat }}</time>
-          </li>
-          {{ end }}
-        </ul>
-      </div>
-      {{ end }}
-    {{ end }}
-
-  {{/* ---------------- POSTS ---------------- */}}
+    <h2>{{ .Title }}</h2>
+    {{ $notes := where .Site.RegularPages "Type" "notes" }}
+    <section class="post-grid" aria-label="Notes">
+      {{ range $notes.ByDate.Reverse }}{{ partial "post-card.html" . }}{{ end }}
+    </section>
   {{ else }}
-    {{ $pages := where .Data.Pages "Type" "posts" }}
-    {{ range $pages.GroupByDate "2006-01" }}
-    <div class="post-group">
-      <h3>{{ dateFormat "January 2006" (printf "%s-01" .Key) }}</h3>
-      <ul>
-        {{ range .Pages }}
-        <li>
-          <a class="link" href="{{ .RelPermalink }}">{{ .Title }}</a>
-          <time>{{ .PublishDate.Format .Site.Params.dateFormat }}</time>
-        </li>
-        {{ end }}
-      </ul>
-    </div>
-    {{ end }}
+    <h2>{{ .Title }}</h2>
+    {{ $pages := where .Site.RegularPages "Type" "posts" }}
+    <section class="post-grid" aria-label="Posts">
+      {{ range $pages.ByDate.Reverse }}{{ partial "post-card.html" . }}{{ end }}
+    </section>
   {{ end }}
-
-  <div class="post-group">
-    <h3>...</h3>
-  </div>
 </main>
 {{ end }}

@@ -11,6 +11,14 @@
 {{ define "main" }}
 <main id="main" class="post">
 
+  {{ $image := "" }}
+  {{ with .Params.image }}{{ $image = . }}{{ end }}
+  {{ with .Params.featured_image }}{{ $image = . }}{{ end }}
+  {{ with .Params.images }}{{ if gt (len .) 0 }}{{ $image = index . 0 }}{{ end }}{{ end }}
+  <div class="post-hero{{ if not $image }} post-hero--placeholder{{ end }}">
+    {{ if $image }}<img src="{{ $image | relURL }}" alt="">{{ end }}
+  </div>
+
   <div class="post-heading">
     <h1 class="post-title">{{ .Title }} </h1>
     <div class="publish-metadata">

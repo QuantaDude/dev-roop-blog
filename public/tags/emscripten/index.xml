@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Emscripten on Roop&#39;s Docs</title>
+		<link>http://localhost:1313/dev-roop-blog/tags/emscripten/</link>
+		<description>Recent content in Emscripten on Roop&#39;s Docs</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 04 Jun 2026 07:23:50 +0530</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/dev-roop-blog/tags/emscripten/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>The Two Things That Bit Me In Emscripten</title>
+				<link>http://localhost:1313/dev-roop-blog/posts/emscripten-quirks/</link>
+				<pubDate>Wed, 03 Jun 2026 19:08:41 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/posts/emscripten-quirks/</guid>
+				<description>&lt;h2 id=&#34;emscriptens-quirks&#34;&gt;Emscripten&amp;rsquo;s Quirks&lt;/h2&gt;&#xA;&lt;p&gt;While building a &lt;a href=&#34;https://github.com/QuantaDude/algo-visualizer/tree/master&#34;&gt;web application&lt;/a&gt; using React, TypeScript, C++, Emscripten, and Raylib, I ran into two linker-related issues that took far longer to diagnose than they should have.&lt;/p&gt;&#xA;&lt;p&gt;This is a short article on two problems that I have faced, I am sharing this so that developers who are exploring Web Assembly using Emscripten can easily avoid these issues as I&amp;rsquo;ll also cover the workarounds that solved them for me.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

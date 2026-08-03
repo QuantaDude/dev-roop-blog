@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head><script src="/dev-roop-blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=dev-roop-blog/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Two Things That Bit Me In Emscripten | Roop&#39;s Docs</title>
+  
+  <link rel="stylesheet" href="/dev-roop-blog/css/base.min.e45e041085e9b07ea20bb758b0ba33fed01d85c321e1acf12a46ce6324f01b25.css" integrity="sha256-5F4EEIXpsH6iC7dYsLoz/tAdhcMh4azxKkbOYyTwGyU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/dev-roop-blog/css/yue.css">
+  
+
+
+  <link rel="stylesheet" href="/dev-roop-blog/css/single.min.273cd3e5b0a73603348ae0266c6b28d174458632819fef74235225df5aaec554.css" integrity="sha256-JzzT5bCnNgM0iuAmbGso0XRFhjKBn&#43;90I1Il31quxVQ=" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="/dev-roop-blog/css/single.min.720f6d5ded464cbc287ff658eaa4d4e785e4bc8a9fc38e2d0efcbd978919dc31.css" integrity="sha256-cg9tXe1GTLwof/ZY6qTU54XkvIqfw44tDvy9l4kZ3DE=" crossorigin="anonymous">
+
+
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-title" href="/dev-roop-blog/">Roop&#39;s Docs</a>
+    <nav class="site-nav">
+      <a href="/dev-roop-blog/">Home</a><a href="/dev-roop-blog/posts/">Blog</a><a href="/dev-roop-blog/notes/">My Notes</a><a href="/dev-roop-blog/resume/">My Resume</a><a href="https://github.com/QuantaDude">GitHub</a>
+    </nav>
+  </header>
+  
+<main id="main" class="post">
+
+  
+  
+  
+  
+  <div class="post-hero post-hero--placeholder">
+    
+  </div>
+
+  <div class="post-heading">
+    <h1 class="post-title">The Two Things That Bit Me In Emscripten </h1>
+    <div class="publish-metadata">
+      
+      <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 9H21M7 3V5M17 3V5M6 13H8M6 17H8M11 13H13M11 17H13M16 13H18M16 17H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      3 June 2026
+      
+      
+      
+      
+        
+      
+      
+    </div>
+  </div>
+
+  
+  <div>
+    
+    <a class="link tag" href='http://localhost:1313/dev-roop-blog/tags/wasm'>#WASM</a>
+    
+    <a class="link tag" href='http://localhost:1313/dev-roop-blog/tags/web-assembly'>#web assembly</a>
+    
+    <a class="link tag" href='http://localhost:1313/dev-roop-blog/tags/cpp'>#cpp</a>
+    
+    <a class="link tag" href='http://localhost:1313/dev-roop-blog/tags/emscripten'>#emscripten</a>
+    
+    <br></br>
+  </div>
+  
+  
+  
+  <details>
+    <summary>
+      <b>Table of Contents</b>
+    </summary>
+    <div class="toc numbered-subtitles"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#emscriptens-quirks">Emscripten&rsquo;s Quirks</a></li>
+    <li><a href="#link-time-optimization-and-em_js">Link-Time Optimization and EM_JS</a></li>
+    <li><a href="#the-three-workarounds">The Three Workarounds</a>
+      <ul>
+        <li><a href="#if-performance-isnt-of-any-concern">If performance isn&rsquo;t of any concern</a></li>
+        <li><a href="#write-a-wrapper">Write a wrapper</a></li>
+        <li><a href="#use-the-macro-in-a-header-or-same-source">Use the macro in a header or same source</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-other-quirk">The other quirk</a></li>
+    <li><a href="#closing-thoughts-and-takeaways">Closing Thoughts and Takeaways</a></li>
+  </ul>
+</nav></div>
+  </details>
+  
+  
+  <article class="content numbered-subtitles">
+    
+    <h2 id="emscriptens-quirks">Emscripten&rsquo;s Quirks</h2>
+<p>While building a <a href="https://github.com/QuantaDude/algo-visualizer/tree/master">web application</a> using React, TypeScript, C++, Emscripten, and Raylib, I ran into two linker-related issues that took far longer to diagnose than they should have.</p>
+<p>This is a short article on two problems that I have faced, I am sharing this so that developers who are exploring Web Assembly using Emscripten can easily avoid these issues as I&rsquo;ll also cover the workarounds that solved them for me.</p>
+<p>I&rsquo;ll start with the major one.</p>
+<h2 id="link-time-optimization-and-em_js">Link-Time Optimization and EM_JS</h2>
+<p>The problem appears when Link Time Optimization <code>(-flto)</code> is enabled and an <code>EM_JS(ret, name, params, ...)</code> macro function is invoked in one translation unit but called from another.</p>
+<p>You&rsquo;ll find that the linker complains that the function symbol you&rsquo;re trying to call is undefined.</p>
+<p>The <code>EM_JS</code> macro defines a C interface to call the JS function. So if you have your EM_JS macros in a <code>js_layer.cpp</code> source file, then you need to wrap the macro invocation as</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">extern</span> <span style="color:#e6db74">&#34;C&#34;</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    EM_JS(<span style="color:#66d9ef">void</span>, add, (<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b), {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//your JS code;
+</span></span></span><span style="display:flex;"><span>          });
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The same applies to the function declaration in <code>js_layer.hpp</code> file.</p>
+<p>I&rsquo;ll briefly go through the three workarounds or &lsquo;solutions&rsquo; before bringing up the last quirk.</p>
+<h2 id="the-three-workarounds">The Three Workarounds</h2>
+<h3 id="if-performance-isnt-of-any-concern">If performance isn&rsquo;t of any concern</h3>
+<p>Well the first one is obvious, just don&rsquo;t use <code>-flto</code> in your release builds. The downside is that your binaries (the .data and .wasm compiler outputs in this case) will be larger.
+Without LTO, the linker has fewer opportunities for whole-program optimization and dead-code elimination, which can increase the size of the generated .wasm and potentially reduce performance.</p>
+<h3 id="write-a-wrapper">Write a wrapper</h3>
+<p>You can simply have a wrapper function in the same translation unit which calls the C function interfacing with the JS function, <code>add()</code> if you take the above example. The wrapper can simply be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// In js_layer.hpp
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add_wrapper</span>(<span style="color:#66d9ef">int</span> , <span style="color:#66d9ef">int</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// In js_layer.cpp
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add_wrapper</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b){
+</span></span><span style="display:flex;"><span>    add(a,b);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now you can call <code>add_wrapper()</code> from any source file just by including <code>js_layer.hpp</code>.</p>
+<h3 id="use-the-macro-in-a-header-or-same-source">Use the macro in a header or same source</h3>
+<p>You won&rsquo;t get any undefined symbols or other linking errors if you declare the JS and C functions in the same source file, or use the <code>EM_JS</code> macro in a header file.</p>
+<p>Since EM_JS emits a function definition rather than a declaration, placing it in a header can lead to multiple-definition problems if the header is included from more than one translation unit.</p>
+<h2 id="the-other-quirk">The other quirk</h2>
+<p>The <code>EXPORTED_FUNCTIONS</code> linker flag in emscripten allows you to export your C/C++ functions so that your JavaScript code in the browser can invoke and run your C code.</p>
+<p>The issue arises when you try to expose an EM_JS function through Emscripten&rsquo;s export mechanism so that it can be called from JavaScript after the module has loaded.</p>
+<p>The linker will simply complain that it can&rsquo;t find the xyz symbol even though it should exist as the <code>EM_JS</code> macro defines a C function which you can call.</p>
+<p>I don&rsquo;t really know why this is the case as I don&rsquo;t know about Emscripten&rsquo;s implementation deeply enough to explain why this happens. Maybe I just need to include some flag in my <code>CMakeLists.txt</code> but ultimately it isn&rsquo;t much of a problem as you can simply do the following in your C function declaration:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// In js_layer.hpp
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">extern</span> <span style="color:#e6db74">&#34;C&#34;</span> <span style="color:#66d9ef">void</span> add(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>) __attribute__((used)) __attribute__((visibility(<span style="color:#e6db74">&#34;default&#34;</span>)));
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// or simply
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">extern</span> <span style="color:#e6db74">&#34;C&#34;</span> <span style="color:#66d9ef">void</span> EMSCRIPTEN_KEEPALIVE add(<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>);
+</span></span></code></pre></div><p>After this you can call the JS function in your JavaScript/TypeScript code after you import the file.</p>
+<h2 id="closing-thoughts-and-takeaways">Closing Thoughts and Takeaways</h2>
+<p>The first linker issue bothered me for quite a while. I couldn&rsquo;t find any resources describing this particular problem, which made it especially frustrating to diagnose. In hindsight, I probably would have discovered the cause much sooner if I had tested a debug build instead of focusing exclusively on release builds.</p>
+<p>I had no idea that enabling Link Time Optimization (<code>-flto</code>) could affect code using the <code>EM_JS</code> macro in this way. I knew about the wrapper workaround for quite some time but recently came to know about the root cause.</p>
+<p>If there&rsquo;s one takeaway from this article, it&rsquo;s this: test your release build configuration early. Some issues only appear when optimization flags are enabled, and linker-related problems can be particularly difficult to track down because the source of the error is often far removed from the code that triggered it.</p>
+<p>WebAssembly development has a few other sharp edges as well. Running out of stack space, memory limits, or misconfigured build flags can all lead to confusing bugs. In my experience, however, those issues are generally easier to understand and solve than linker problems like the ones described here.</p>
+<p>Hopefully this saves someone else a few hours of debugging.</p>
+
+    
+  </article>
+
+  <button onclick="topFunction()" id="back-to-top" title="Go to top">Back to Top</button>
+
+  <div class="share-buttons"></div>
+
+  <div class="paginator">
+    
+    <a></a>
+    
+    
+    <a></a>
+    
+  </div>
+  
+  <div class="comment">
+    
+    
+    
+    <script src="https://giscus.app/client.js"
+        data-repo="QuantaDude/dev-roop-blog"
+        data-repo-id="R_kgDOQ3jgfg"
+        data-category="General"
+        data-category-id="DIC_kwDOQ3jgfs4C00OL"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="gruvbox_dark"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+  
+  </div>
+  
+  
+</main>
+
+  <footer class="site-footer">Abhirup Bhattacharyya | 
+Powered by  <a class=link href=https://gohugo.io target=_blank rel=noopener>Hugo</a>
+</footer>
+</body>
+</html>

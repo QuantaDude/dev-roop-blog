@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Tags on Roop&#39;s Docs</title>
+		<link>http://localhost:1313/dev-roop-blog/tags/</link>
+		<description>Recent content in Tags on Roop&#39;s Docs</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 04 Jun 2026 07:23:50 +0530</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/dev-roop-blog/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Cpp</title>
+				<link>http://localhost:1313/dev-roop-blog/tags/cpp/</link>
+				<pubDate>Wed, 03 Jun 2026 19:08:41 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/tags/cpp/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Emscripten</title>
+				<link>http://localhost:1313/dev-roop-blog/tags/emscripten/</link>
+				<pubDate>Wed, 03 Jun 2026 19:08:41 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/tags/emscripten/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>WASM</title>
+				<link>http://localhost:1313/dev-roop-blog/tags/wasm/</link>
+				<pubDate>Wed, 03 Jun 2026 19:08:41 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/tags/wasm/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Web Assembly</title>
+				<link>http://localhost:1313/dev-roop-blog/tags/web-assembly/</link>
+				<pubDate>Wed, 03 Jun 2026 19:08:41 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/tags/web-assembly/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Linux</title>
+				<link>http://localhost:1313/dev-roop-blog/tags/linux/</link>
+				<pubDate>Thu, 14 May 2026 21:49:58 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/tags/linux/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Network</title>
+				<link>http://localhost:1313/dev-roop-blog/tags/network/</link>
+				<pubDate>Thu, 14 May 2026 21:49:58 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/tags/network/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Ssh</title>
+				<link>http://localhost:1313/dev-roop-blog/tags/ssh/</link>
+				<pubDate>Thu, 14 May 2026 21:49:58 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/tags/ssh/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

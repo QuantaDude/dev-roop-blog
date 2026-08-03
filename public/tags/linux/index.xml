@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Linux on Roop&#39;s Docs</title>
+		<link>http://localhost:1313/dev-roop-blog/tags/linux/</link>
+		<description>Recent content in Linux on Roop&#39;s Docs</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 04 Jun 2026 07:23:50 +0530</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/dev-roop-blog/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Finding LAN Devices</title>
+				<link>http://localhost:1313/dev-roop-blog/notes/lan-devices/</link>
+				<pubDate>Thu, 14 May 2026 21:49:58 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/notes/lan-devices/</guid>
+				<description>&lt;h2 id=&#34;finding-devices-on-your-local-network-in-linux&#34;&gt;Finding Devices on Your Local Network in Linux&lt;/h2&gt;&#xA;&lt;p&gt;Sometimes you need to find:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;your Raspberry Pi&lt;/li&gt;&#xA;&lt;li&gt;another computer on the LAN&lt;/li&gt;&#xA;&lt;li&gt;a phone&lt;/li&gt;&#xA;&lt;li&gt;a smart TV&lt;/li&gt;&#xA;&lt;li&gt;a server&lt;/li&gt;&#xA;&lt;li&gt;an unknown device connected to your router&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Linux provides several useful commands for exploring your local network.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;viewing-network-interfaces&#34;&gt;Viewing Network Interfaces&lt;/h2&gt;&#xA;&lt;p&gt;The first thing you usually want to know is:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;your IP address&lt;/li&gt;&#xA;&lt;li&gt;your subnet&lt;/li&gt;&#xA;&lt;li&gt;your network interface name&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Use:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ip addr&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Example output:&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Categories on Roop&#39;s Docs</title>
+		<link>http://localhost:1313/dev-roop-blog/categories/</link>
+		<description>Recent content in Categories on Roop&#39;s Docs</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 04 Jun 2026 07:23:50 +0530</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/dev-roop-blog/categories/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>C/CPP</title>
+				<link>http://localhost:1313/dev-roop-blog/categories/c/cpp/</link>
+				<pubDate>Wed, 03 Jun 2026 19:08:41 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/categories/c/cpp/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Emscripten</title>
+				<link>http://localhost:1313/dev-roop-blog/categories/emscripten/</link>
+				<pubDate>Wed, 03 Jun 2026 19:08:41 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/categories/emscripten/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>WASM</title>
+				<link>http://localhost:1313/dev-roop-blog/categories/wasm/</link>
+				<pubDate>Wed, 03 Jun 2026 19:08:41 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/categories/wasm/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Web Assembly</title>
+				<link>http://localhost:1313/dev-roop-blog/categories/web-assembly/</link>
+				<pubDate>Wed, 03 Jun 2026 19:08:41 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/categories/web-assembly/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Linux</title>
+				<link>http://localhost:1313/dev-roop-blog/categories/linux/</link>
+				<pubDate>Thu, 14 May 2026 21:49:58 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/categories/linux/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Raspberry Pi</title>
+				<link>http://localhost:1313/dev-roop-blog/categories/raspberry-pi/</link>
+				<pubDate>Thu, 14 May 2026 21:49:58 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/categories/raspberry-pi/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>SSH</title>
+				<link>http://localhost:1313/dev-roop-blog/categories/ssh/</link>
+				<pubDate>Thu, 14 May 2026 21:49:58 +0530</pubDate>
+				<guid>http://localhost:1313/dev-roop-blog/categories/ssh/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

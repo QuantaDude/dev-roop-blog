@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head><script src="/dev-roop-blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=dev-roop-blog/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finding LAN Devices | Roop&#39;s Docs</title>
+  
+  <link rel="stylesheet" href="/dev-roop-blog/css/base.min.e45e041085e9b07ea20bb758b0ba33fed01d85c321e1acf12a46ce6324f01b25.css" integrity="sha256-5F4EEIXpsH6iC7dYsLoz/tAdhcMh4azxKkbOYyTwGyU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/dev-roop-blog/css/yue.css">
+  
+
+
+  <link rel="stylesheet" href="/dev-roop-blog/css/single.min.273cd3e5b0a73603348ae0266c6b28d174458632819fef74235225df5aaec554.css" integrity="sha256-JzzT5bCnNgM0iuAmbGso0XRFhjKBn&#43;90I1Il31quxVQ=" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="/dev-roop-blog/css/single.min.720f6d5ded464cbc287ff658eaa4d4e785e4bc8a9fc38e2d0efcbd978919dc31.css" integrity="sha256-cg9tXe1GTLwof/ZY6qTU54XkvIqfw44tDvy9l4kZ3DE=" crossorigin="anonymous">
+
+
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-title" href="/dev-roop-blog/">Roop&#39;s Docs</a>
+    <nav class="site-nav">
+      <a href="/dev-roop-blog/">Home</a><a href="/dev-roop-blog/posts/">Blog</a><a href="/dev-roop-blog/notes/">My Notes</a><a href="/dev-roop-blog/resume/">My Resume</a><a href="https://github.com/QuantaDude">GitHub</a>
+    </nav>
+  </header>
+  
+<main id="main" class="post">
+
+  
+  
+  
+  
+  <div class="post-hero post-hero--placeholder">
+    
+  </div>
+
+  <div class="post-heading">
+    <h1 class="post-title">Finding LAN Devices </h1>
+    <div class="publish-metadata">
+      
+      <svg width="0.75em" height="0.75em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 9H21M7 3V5M17 3V5M6 13H8M6 17H8M11 13H13M11 17H13M16 13H18M16 17H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      14 May 2026
+      
+      
+      
+      
+        
+      
+      
+    </div>
+  </div>
+
+  
+  <div>
+    
+    <a class="link tag" href='http://localhost:1313/dev-roop-blog/tags/linux'>#linux</a>
+    
+    <a class="link tag" href='http://localhost:1313/dev-roop-blog/tags/ssh'>#ssh</a>
+    
+    <a class="link tag" href='http://localhost:1313/dev-roop-blog/tags/network'>#network</a>
+    
+    <br></br>
+  </div>
+  
+  
+  
+  <details>
+    <summary>
+      <b>Table of Contents</b>
+    </summary>
+    <div class="toc numbered-subtitles"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#finding-devices-on-your-local-network-in-linux">Finding Devices on Your Local Network in Linux</a></li>
+    <li><a href="#viewing-network-interfaces">Viewing Network Interfaces</a></li>
+    <li><a href="#understanding-the-subnet">Understanding the Subnet</a></li>
+    <li><a href="#viewing-known-devices-with-ip-neigh">Viewing Known Devices with <code>ip neigh</code></a></li>
+    <li><a href="#using-arp--a">Using <code>arp -a</code></a></li>
+    <li><a href="#scanning-the-entire-network-with-nmap">Scanning the Entire Network with <code>nmap</code></a>
+      <ul>
+        <li><a href="#arch--artix">Arch / Artix</a></li>
+        <li><a href="#debian--ubuntu">Debian / Ubuntu</a></li>
+      </ul>
+    </li>
+    <li><a href="#ping-scan-with-nmap--sn">Ping Scan with <code>nmap -sn</code></a></li>
+    <li><a href="#raspberry-pi-usb-gadget-networking">Raspberry Pi USB Gadget Networking</a></li>
+    <li><a href="#discovering-local-hostnames-with-avahi">Discovering <code>.local</code> Hostnames with Avahi</a>
+      <ul>
+        <li><a href="#arch--artix-1">Arch / Artix</a></li>
+      </ul>
+    </li>
+    <li><a href="#useful-one-liners">Useful One-Liners</a>
+      <ul>
+        <li><a href="#show-only-ipv4-addresses">Show only IPv4 addresses</a></li>
+        <li><a href="#show-routing-table">Show routing table</a></li>
+        <li><a href="#view-active-listening-ports">View active listening ports</a></li>
+        <li><a href="#ping-a-device">Ping a device</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+  </details>
+  
+  
+  <article class="content numbered-subtitles">
+    
+    <h2 id="finding-devices-on-your-local-network-in-linux">Finding Devices on Your Local Network in Linux</h2>
+<p>Sometimes you need to find:</p>
+<ul>
+<li>your Raspberry Pi</li>
+<li>another computer on the LAN</li>
+<li>a phone</li>
+<li>a smart TV</li>
+<li>a server</li>
+<li>an unknown device connected to your router</li>
+</ul>
+<p>Linux provides several useful commands for exploring your local network.</p>
+<hr>
+<h2 id="viewing-network-interfaces">Viewing Network Interfaces</h2>
+<p>The first thing you usually want to know is:</p>
+<ul>
+<li>your IP address</li>
+<li>your subnet</li>
+<li>your network interface name</li>
+</ul>
+<p>Use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip addr
+</span></span></code></pre></div><p>Example output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>2: wlan0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;
+</span></span><span style="display:flex;"><span>    inet 192.168.1.23/24
+</span></span></code></pre></div><p>This tells us:</p>
+<ul>
+<li>interface name: <code>wlan0</code></li>
+<li>local IP address: <code>192.168.1.23</code></li>
+<li>subnet mask: <code>/24</code></li>
+</ul>
+<p>A <code>/24</code> subnet usually means the network range is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>192.168.1.0/24
+</span></span></code></pre></div><hr>
+<h2 id="understanding-the-subnet">Understanding the Subnet</h2>
+<p>If your machine has:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>192.168.1.23/24
+</span></span></code></pre></div><p>then:</p>
+<ul>
+<li>network address: <code>192.168.1.0</code></li>
+<li>possible devices: <code>192.168.1.1</code> → <code>192.168.1.254</code></li>
+</ul>
+<p>Usually:</p>
+<ul>
+<li><code>.1</code> is the router</li>
+<li>other devices receive addresses dynamically via DHCP</li>
+</ul>
+<hr>
+<h2 id="viewing-known-devices-with-ip-neigh">Viewing Known Devices with <code>ip neigh</code></h2>
+<p>Linux maintains a neighbor table containing devices your machine has recently communicated with.</p>
+<p>View it using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip neigh
+</span></span></code></pre></div><p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>192.168.1.1 dev wlan0 lladdr 34:60:f9:aa:bb:cc REACHABLE
+</span></span><span style="display:flex;"><span>192.168.1.5 dev wlan0 lladdr 11:22:33:44:55:66 STALE
+</span></span></code></pre></div><p>Explanation:</p>
+<ul>
+<li><code>192.168.1.1</code> → device IP address</li>
+<li><code>wlan0</code> → network interface</li>
+<li><code>lladdr</code> → MAC address</li>
+<li><code>REACHABLE</code> → device recently responded</li>
+<li><code>STALE</code> → entry exists but has not been contacted recently</li>
+</ul>
+<p>This command is useful for quickly seeing devices already known to the system.</p>
+<hr>
+<h2 id="using-arp--a">Using <code>arp -a</code></h2>
+<p>Older systems often use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>arp -a
+</span></span></code></pre></div><p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>router (192.168.1.1) at 34:60:f9:aa:bb:cc [ether] on wlan0
+</span></span></code></pre></div><p>This shows similar information to <code>ip neigh</code>.</p>
+<p><code>ip neigh</code> is considered the modern replacement.</p>
+<hr>
+<h2 id="scanning-the-entire-network-with-nmap">Scanning the Entire Network with <code>nmap</code></h2>
+<p><code>nmap</code> is one of the most useful network scanning tools available.</p>
+<p>Install it:</p>
+<h3 id="arch--artix">Arch / Artix</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S nmap
+</span></span></code></pre></div><h3 id="debian--ubuntu">Debian / Ubuntu</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install nmap
+</span></span></code></pre></div><hr>
+<h2 id="ping-scan-with-nmap--sn">Ping Scan with <code>nmap -sn</code></h2>
+<p>To discover active devices on your network:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -sn 192.168.1.0/24
+</span></span></code></pre></div><p>Explanation:</p>
+<ul>
+<li><code>-sn</code> means:
+<ul>
+<li>host discovery only</li>
+<li>no port scanning</li>
+</ul>
+</li>
+</ul>
+<p>Sometimes <code>nmap</code> can also identify the device vendor:</p>
+<hr>
+<h2 id="raspberry-pi-usb-gadget-networking">Raspberry Pi USB Gadget Networking</h2>
+<p>If SSH over USB is enabled on a Raspberry Pi, plugging it into a Linux computer may create a USB network interface.</p>
+<p>Check interfaces:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip addr
+</span></span></code></pre></div><p>You may see:</p>
+<ul>
+<li><code>usb0</code></li>
+<li><code>enx...</code></li>
+</ul>
+<p>Typical addresses:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Device</th>
+					<th>IP</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Host PC</td>
+					<td>192.168.7.1</td>
+			</tr>
+			<tr>
+					<td>Raspberry Pi</td>
+					<td>192.168.7.2</td>
+			</tr>
+	</tbody>
+</table>
+<p>Connect using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh pi@192.168.7.2
+</span></span></code></pre></div><p>or:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh username@raspberrypi.local
+</span></span></code></pre></div><hr>
+<h2 id="discovering-local-hostnames-with-avahi">Discovering <code>.local</code> Hostnames with Avahi</h2>
+<p>Linux systems can use mDNS (multicast DNS) for hostname discovery.</p>
+<p>Install:</p>
+<h3 id="arch--artix-1">Arch / Artix</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S avahi nss-mdns
+</span></span></code></pre></div><p>Start the service:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable --now avahi-daemon
+</span></span></code></pre></div><p>Browse devices:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>avahi-browse -at
+</span></span></code></pre></div><p>This may show:</p>
+<ul>
+<li>Raspberry Pis</li>
+<li>printers</li>
+<li>Linux machines</li>
+<li>smart devices</li>
+</ul>
+<hr>
+<h2 id="useful-one-liners">Useful One-Liners</h2>
+<h3 id="show-only-ipv4-addresses">Show only IPv4 addresses</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip -4 addr
+</span></span></code></pre></div><h3 id="show-routing-table">Show routing table</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip route
+</span></span></code></pre></div><h3 id="view-active-listening-ports">View active listening ports</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ss -tulpn
+</span></span></code></pre></div><h3 id="ping-a-device">Ping a device</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping 192.168.1.1
+</span></span></code></pre></div><hr>
+
+    
+  </article>
+
+  <button onclick="topFunction()" id="back-to-top" title="Go to top">Back to Top</button>
+
+  <div class="share-buttons"></div>
+
+  <div class="paginator">
+    
+    <a></a>
+    
+    
+    <a></a>
+    
+  </div>
+  
+  
+</main>
+
+  <footer class="site-footer">Abhirup Bhattacharyya | 
+Powered by  <a class=link href=https://gohugo.io target=_blank rel=noopener>Hugo</a>
+</footer>
+</body>
+</html>

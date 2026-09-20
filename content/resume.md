@@ -2,7 +2,7 @@
 title: "Abhirup Bhattacharyya"
 subtitle: "Software Development Engineer · Back-End Developer"
 layout: "resume"
-date: 2026-01-24
+date: 2026-09-20
 location: "Uttar Pradesh, India"
 phone: "(+91) 89-2974-1066"
 email: "abhirup27022001@outlook.com"
@@ -28,7 +28,29 @@ MCA graduate with experience building back-end systems in TypeScript, C++, and W
 - Designed the API with minimal endpoints, strong validation, and consistent query and mutation semantics between front-end and back-end.
 - Implemented an automated rescheduling algorithm to handle doctor schedule changes and emergencies, reducing manual clinic staff intervention.
 
+## Open-Source Contributions
+
+### OpenEXR (Academy Software Foundation)
+**C++, CMake, Sphinx/reStructuredText, CI** | *DevDays 2026* | [PR #2647](https://github.com/AcademySoftwareFoundation/openexr/pull/2647) · [PR #2652](https://github.com/AcademySoftwareFoundation/openexr/pull/2652) · [PR #2649](https://github.com/AcademySoftwareFoundation/openexr/pull/2649) · [PR #2657](https://github.com/AcademySoftwareFoundation/openexr/pull/2657)
+
+- Eliminated the `all.cpp` aggregation workaround in the documentation build: fixed the examples so each compiles standalone (added missing `#include`s, split `MemoryMappedIStream` into independent sources), and replaced the aggregation with a CMake OBJECT library so missing-header errors surface in CI instead of being masked.
+- Migrated the documentation site to a better layout structure, redesigned the homepage with navigation cards, added light/dark theming, and implemented Read the Docs version switching via `READTHEDOCS_VERSION` and a `switcher.json`.
+- Improved documentation formatting across 13 files and documented the missing `LJ2K_COMPRESSION` attribute.
+
+### AI Generated Music Detection API SDK
+**TypeScript, Vitest, PNPM workspaces, NPM** | *December 2025 - January 2026* | [GitHub](https://github.com/TtesseractT/uhmbrella-api)
+
+- Built a runtime-agnostic JavaScript SDK for an AI music detection API with client initialization, retries, validation, and error handling.
+- Implemented runtime assertions, authored Vitest tests, reported a Jobs API bug, and documented the public API with JSDoc.
+
 ## Projects
+
+### Codebase Search Engine (RAG)
+**TypeScript, Node.js, Express, PostgreSQL, pgvector, Drizzle ORM** | *2026 - Ongoing* | [GitHub](https://github.com/QuantaDude/RAG-codebase)
+
+- Built a retrieval-augmented search engine for source code: chunks code by structure (functions, classes, methods, variables), embeds each chunk, and stores it in PostgreSQL with pgvector through Drizzle ORM.
+- Implemented an end-to-end query pipeline: a decoder transformer extracts structural meaning and a code-embedding model extracts semantic meaning, together narrowing the candidate chunks before a pgvector cosine-similarity search returns the best-matching code body.
+- Currently adding guest zip-upload indexing with live chunk-embedding progress.
 
 ### Algorithm Visualizer (Algoplex)
 **C++, WASM, JavaScript, WebGL** | [Deployed App](https://quantadude.github.io/algoplex/) | [GitHub](https://github.com/QuantaDude/algoplex)
@@ -45,21 +67,6 @@ MCA graduate with experience building back-end systems in TypeScript, C++, and W
 - Implemented role-based authorization and JWT authentication, and background jobs using Redis and BullMQ for data synchronization.
 - Designed cron jobs to keep Redis, PostgreSQL, and Shopify data consistent.
 - Integrated Shopify Payments with a credits-based billing system.
-
-### Taant Tantra - Full-stack E-commerce App 
-**React Router, TypeScript, Express.js, REST API, Supabase, PostgreSQL, Vite, Razorpay API, Shiprocket, Figma** | *December 2025 - Ongoing* | [GitHub](https://github.com/quantadude/taant-tantra-ecommerce)
-
-- Building a full-stack e-commerce platform for a clothing retailer with a custom storefront and admin dashboard.
-- Implemented server-side rendering with React Router.
-- Integrated Shiprocket for shipping validation and rate selection, and integrated Razorpay for payments
-
-## Open-Source Contributions
-
-### AI Generated Music Detection API SDK
-**TypeScript, Vitest, PNPM workspaces, NPM** | *December 2025 - January 2026* | [GitHub](https://github.com/TtesseractT/uhmbrella-api)
-
-- Built a runtime-agnostic JavaScript SDK for an AI music detection API with client initialization, retries, validation, and error handling.
-- Implemented runtime assertions, authored Vitest tests, reported a Jobs API bug, and documented the public API with JSDoc.
 
 ## Hackathons and Competitions
 

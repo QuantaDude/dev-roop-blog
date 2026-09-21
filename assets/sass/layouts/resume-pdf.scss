@@ -120,8 +120,9 @@ main.resume {
 
       /* section headings */
       h2 {
-        margin: 4pt 0 3pt;
-        padding: 0 0 1pt;
+        clear: both;              // start below any floated entry header
+        margin: 0 0 3pt;
+        padding: 4pt 0 1pt;       // padding (not margin) so the gap survives clearance
         border-bottom: 0.7pt solid $navy;
         font-size: 10pt;
         line-height: 12pt;
@@ -134,7 +135,9 @@ main.resume {
 
       /* Entry header: h3 = title (left), the paragraph right after it =
          dates/links (right-aligned on the same line). Pure markdown, no
-         extra HTML: float the h3 and let the next <p> fill the rest. */
+         extra HTML: float the h3 left and that <p> right, so they share
+         one line. (Two floats, not "float + overflow:hidden" -- WeasyPrint
+         drops a BFC box below the float instead of placing it beside.) */
       h3 {
         float: left;
         clear: both;
@@ -158,8 +161,10 @@ main.resume {
       }
 
       h3 + p {
-        overflow: hidden;         // sits beside the floated h3
+        float: right;
+        clear: none;
         margin: 2.5pt 0 0;
+        padding: 0;
         text-align: right;
         font-size: 8.6pt;
         line-height: 11.2pt;

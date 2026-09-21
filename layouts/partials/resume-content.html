@@ -21,13 +21,13 @@
         <p>
           {{ with .Params.portfolio }}<a href="{{ . }}">My Website</a>{{ end }}
           {{ if and .Params.portfolio .Params.github }} | {{ end }}
-          {{ with .Params.github }}<a href="{{ . }}">My GitHub</a>{{ end }}
+          {{ with .Params.github }}<a href="{{ . }}">GitHub</a>{{ end }}
           {{ if and .Params.github .Params.linkedin }} | {{ end }}
-          {{ with .Params.linkedin }}<a href="{{ . }}">My LinkedIn</a>{{ end }}
+          {{ with .Params.linkedin }}<a href="{{ . }}">LinkedIn</a>{{ end }}
           {{ if and .Params.linkedin .Params.codewars}} | {{ end }}
-          {{ with .Params.codewars}}<a href="{{ . }}">My Codewars</a>{{ end }}
+          {{ with .Params.codewars}}<a href="{{ . }}">Codewars</a>{{ end }}
           {{ if and .Params.codewars .Params.leetcode}} | {{ end }}
-          {{ with .Params.leetcode}}<a href="{{ . }}">My Leetcode</a>{{ end }}
+          {{ with .Params.leetcode}}<a href="{{ . }}">Leetcode</a>{{ end }}
         </p>
         
 

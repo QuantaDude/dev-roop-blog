@@ -43,7 +43,7 @@ July 2025 – August 2025 | [Certificate](https://www.linkedin.com/in/abroop/ove
 
 ## Open-Source Contributions
 
-### AI Generated Music Detection API SDK *— TypeScript, Vitest, PNPM, NPM*
+### AI Generated Music Detection API SDK *— TypeScript, Vitest*
 
 Dec 2025 – Jan 2026 | [GitHub](https://github.com/TtesseractT/uhmbrella-api)
 
@@ -51,14 +51,14 @@ Dec 2025 – Jan 2026 | [GitHub](https://github.com/TtesseractT/uhmbrella-api)
 
 ## Projects
 
-### Codebase Search Engine (RAG) *— TypeScript, Node.js, PostgreSQL, pgvector*
+### Codebase Search Engine (RAG) *— TypeScript, Node.js, PostgreSQL, pgvector, React, PNPM*
 
 2026 – Ongoing | [GitHub](https://github.com/QuantaDude/RAG-codebase)
 
 - Chunks code by structure (functions, classes, methods), embeds each chunk, and stores it in PostgreSQL with pgvector.
 - Query pipeline pairs a decoder transformer (structure) with a code-embedding model (semantics) to narrow candidates before pgvector cosine search.
 
-### Algorithm Visualizer (Algoplex) *— C++, WASM, JavaScript, WebGL*
+### Algorithm Visualizer (Algoplex) *— C++, TypeScript, React, WASM, WebGL*
 
 [Deployed App](https://quantadude.github.io/algoplex/) | [GitHub](https://github.com/QuantaDude/algoplex)
 

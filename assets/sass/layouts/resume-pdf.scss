@@ -1,189 +1,245 @@
-@use "sass:math";
+/* =========================================================
+   Resume PDF layout: one A4 page, white background.
+   Mirrors the hand-built PDF (Helvetica 9pt, navy accents).
+   Loaded ONLY by single.ResumePDF.html, so it has no
+   dependency on the site theme or vars.
+   ========================================================= */
 
-/* =========================
-   FORCE DARK THEME FOR PDF
-   ========================= */
+$navy:   #1f3a5f;
+$ink:    #111111;
+$muted:  #444444;
+$link:   #1a5fb4;
+$font:   Helvetica, Arial, "Liberation Sans", "Nimbus Sans", sans-serif;
 
-:root {
-  --bg_h: #282828;
-  --bg: #282828;
-  --bg_s: #3c3836;
-  --bg1: #3c3836;
-  --bg2: #504945;
-  --bg3: #665c54;
-  --bg4: #7c6f64;
-
-  --fg: #ebdbb2;
-  --fg1: #ebdbb2;
-  --fg2: #d5c4a1;
-  --fg3: #bdae93;
-  --fg4: #a89984;
-
-  /* ORANGE ONLY */
-  --orange: #fe8019;
-  --orange-dim: #d65d0e;
-
-  --link-color: var(--orange);
-  --link-hover-color: var(--orange-dim);
-  --border-color: #504945;
-  --secondary-text-color: #bdae93;
-
-  --code-bg-color: #3c3836;
+@page {
+  size: A4;
+  margin: 11mm 14mm 10mm; // top, sides, bottom
 }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
 main.resume {
-  background: var(--bg);
-  color: var(--fg);
-  max-width: 100% !important;
-  min-height: 100vh;
+  max-width: none !important;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: $ink;
+  font-family: $font;
+  font-size: 9pt;
+  line-height: 11.2pt;
 
   article {
-    max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 2rem;
+    max-width: none;
+    margin: 0;
+    padding: 0;
 
+    /* ---------- header ---------- */
     header {
+      margin: 0;
+      padding: 0;
+      border: 0;
       text-align: center;
-      border-bottom: 2px solid var(--fg4);
-      margin-bottom: 1.5rem;
-      margin-top: 0;
-      padding-bottom: 1rem;
-      a,
-      a:visited,
-      a:hover,
-      a:active {
-        color: var(--orange);
-        text-decoration: underline;
-        border: none;
-      }
+
       h1 {
-        font-size: 2rem;
-      margin-top: 0;
-        padding-bottom: 0rem;
-        margin-bottom: 0.1rem;
-        color: var(--fg);
+        margin: 0;
+        padding: 0;
+        font-size: 20pt;
+        line-height: 23pt;
+        font-weight: 700;
+        color: $navy;
       }
 
       .subtitle {
-        color: var(--secondary-text-color);
-        font-size: 1rem;
-        margin-top: -0.2rem;
+        margin: 0 0 2pt;
+        font-size: 10pt;
+        line-height: 12pt;
+        color: $muted;
       }
 
+      /* Partial emits three <p>s: location / phone | email / links.
+         Join the first two onto one centered line, links on the next. */
       .contact-info {
-        margin-top: 1rem;
-     line-height: .5rem;
+        margin: 0;
+        padding: 0;
+        line-height: 10.6pt;
 
+        p {
+          margin: 0;
+          padding: 0;
+          font-size: 8.6pt;
+          line-height: 10.6pt;
+          text-align: center;
+        }
+
+        p:nth-child(1),
+        p:nth-child(2) {
+          display: inline;
+        }
+
+        p:nth-child(1)::after {
+          content: " | ";
+        }
+
+        p:nth-child(3) {
+          display: block;
+        }
+
+        strong {                  // location is wrapped in <strong> by the partial
+          font-weight: 400;
+        }
       }
 
+      .tech-stack,
       time {
-        display: none; /* PDFs don’t need this */
-      }
-    }
-
-    .content {
-      line-height: 1.5;
-
-      h2 {
-        margin-top: 2rem;
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 0.4rem;
-        font-size: 1.4rem;
-      }
-  h2 {
-    margin-bottom: 0.6rem;
-  }
-
-  h2 + p {
-    margin-top: 0.3rem;
-   font-size: 0.9rem; 
+        display: none; // skills live in the "Technical Skills" section
       }
 
-  h2 + h3 {
-    margin-top: 0.6rem;
-        font-size: 1.1rem;
-  }
-      h3 {
-    font-size: 1.1rem;
-    margin-top: 1.2rem;
-    margin-bottom: 0.2rem;
-      }
-
-  h3 + p {
-    margin-top: 0rem;
-        font-size: 0.8rem;
-      }
-      
-      p,
-      li {
-        font-size: 0.9rem;
-        text-align: justify;
-        hyphens: none;
-      }
-      ul {
-        margin-top: -0.5rem;
-        padding-top: 0rem;
-        // padding-bottom: 1rem;
-      }
-      ul,
-      ol {
-        margin-left: 1rem;
-      }
-
-      strong {
-        color: var(--fg);
-      }
-
-      /* 🔥 ORANGE LINKS — ALWAYS */
       a,
       a:visited,
       a:hover,
       a:active {
-        color: var(--orange);
-        text-decoration: underline;
-        border: none;
+        color: $link;
+        text-decoration: none;
+        border: 0;
+      }
+    }
+
+    /* ---------- body ---------- */
+    .content {
+      margin: 0;
+      padding: 0;
+      line-height: 11.2pt;
+
+      /* section headings */
+      h2 {
+        margin: 4pt 0 3pt;
+        padding: 0 0 1pt;
+        border-bottom: 0.7pt solid $navy;
+        font-size: 10pt;
+        line-height: 12pt;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        color: $navy;
+        break-after: avoid;
       }
 
+      /* Entry header: h3 = title (left), the paragraph right after it =
+         dates/links (right-aligned on the same line). Pure markdown, no
+         extra HTML: float the h3 and let the next <p> fill the rest. */
+      h3 {
+        float: left;
+        clear: both;
+        margin: 2.5pt 0 0;
+        padding: 0 8pt 0 0;
+        font-size: 9pt;
+        line-height: 11.2pt;
+        font-weight: 700;
+        color: $ink;
+        break-after: avoid;
+
+        em {                      // tech stack / org after the title
+          font-style: normal;
+          font-weight: 400;
+          font-size: 8.6pt;
+        }
+      }
+
+      h2 + h3 {
+        margin-top: 0;
+      }
+
+      h3 + p {
+        overflow: hidden;         // sits beside the floated h3
+        margin: 2.5pt 0 0;
+        text-align: right;
+        font-size: 8.6pt;
+        line-height: 11.2pt;
+        color: $muted;
+        break-after: avoid;
+      }
+
+      h2 + h3 + p {
+        margin-top: 0;
+      }
+
+      /* plain paragraphs (summary, skills, certificates) */
+      p {
+        margin: 0;
+        font-size: 9pt;
+        line-height: 11.2pt;
+        text-align: left;
+        hyphens: none;
+      }
+
+      ul {
+        clear: both;
+        margin: 0;
+        padding: 0 0 0 11pt;
+        list-style: none;
+      }
+
+      li {
+        margin: 0;
+        padding: 0;
+        font-size: 9pt;
+        line-height: 11.2pt;
+        text-align: left;
+        hyphens: none;
+        break-inside: avoid;
+        position: relative;
+
+        &::before {               // "•" bullet, same size/offset as the reference PDF
+          content: "\2022";
+          position: absolute;
+          left: -11pt;
+          font-size: 8pt;
+        }
+      }
+
+      strong {
+        font-weight: 700;
+        color: $ink;
+      }
+
+      /* `inline code` renders as plain italic, like the reference PDF */
       code {
-        background: var(--code-bg-color);
-        padding: 0.15rem 0.35rem;
-        border-radius: 3px;
+        padding: 0;
+        background: none;
+        border-radius: 0;
+        font-family: inherit;
+        font-size: inherit;
+        font-style: italic;
+      }
+
+      a,
+      a:visited,
+      a:hover,
+      a:active {
+        color: $link;
+        text-decoration: none;
+        border: 0;
       }
 
       blockquote {
-        border-left: 3px solid var(--orange);
-        padding-left: 1rem;
-        color: var(--secondary-text-color);
+        margin: 0;
+        padding: 0;
+        border: 0;
         font-style: italic;
+        color: $muted;
       }
     }
 
     .resume-download {
-      display: none; /* No buttons in PDF */
+      display: none; // no download button in the PDF
     }
   }
 }
-@page {
-  size: A4;
-  margin: 14mm 5mm;
-  background: #282828;
-}
-
-@media print {
-  body {
-    background: var(--bg) !important;
-    color: var(--fg) !important;
-  }
-
-  main.resume {
-    box-shadow: none;
-  }
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  background: #282828;
-}
-

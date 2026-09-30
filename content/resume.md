@@ -28,22 +28,23 @@ MCA graduate with experience building back-end systems in TypeScript, C++, and W
 
 ## Experience
 
-### Open-Source Contributor, OpenImageIO *— Academy Software Foundation*
+### Open-Source Contributor, OpenImageIO & OpenEXR *— Academy Software Foundation*
 
-September 2026 | PR [#5495](https://github.com/AcademySoftwareFoundation/OpenImageIO/pull/5495)
+September 2026 | PRs [#5495](https://github.com/AcademySoftwareFoundation/OpenImageIO/pull/5495) · [#2647](https://github.com/AcademySoftwareFoundation/openexr/pull/2647) · [#2652](https://github.com/AcademySoftwareFoundation/openexr/pull/2652) · [#2649](https://github.com/AcademySoftwareFoundation/openexr/pull/2649) · [#2657](https://github.com/AcademySoftwareFoundation/openexr/pull/2657) | Issues [#2675](https://github.com/AcademySoftwareFoundation/openexr/issues/2675) · [#2670](https://github.com/AcademySoftwareFoundation/openexr/issues/2670) 
 
-- Added `LJ2K` and `ZSTD` compression support to the OpenEXR plugin across the C++ and Core read and write paths, with LJ2K quality and ZSTD level handling.
-- Added version-gated regression tests with reference files, HTJ2K coverage, and updated docs; bumped the bundled OpenEXR build to v3.5.0.
+- Added `LJ2K` and `ZSTD` compression support to the OpenEXR plugin across the C++ and Core read and write paths, with LJ2K quality and ZSTD level handling (#5495).
+- Removed the aggregation workaround from the docs build process: made each example compile standalone and switched to a CMake OBJECT library so missing headers fail in CI (#2647).
+- Investigated two bugs: Corrupted LJ2K encoder output on the 4.0.0-dev branch (#2675), and found a data race in OpenEXRCore's `unpack.c` (#2670).
+- Added version-gated regression tests to OpenImageIO with reference files, HTJ2K coverage, and updated docs; bumped the bundled OpenEXR build to v3.5.0 (#5495).
+- Redesigned the OpenEXR docs site with a navigation-card homepage, light/dark theming, version switching, and reformatted documentation files. (#2657 ,#2652)
 
-### Open-Source Contributor, OpenEXR *— Academy Software Foundation*
-
-DevDays 2026 | PR [#2647](https://github.com/AcademySoftwareFoundation/openexr/pull/2647) · [#2652](https://github.com/AcademySoftwareFoundation/openexr/pull/2652) · [#2649](https://github.com/AcademySoftwareFoundation/openexr/pull/2649) · [#2657](https://github.com/AcademySoftwareFoundation/openexr/pull/2657) | Issues [#2670](https://github.com/AcademySoftwareFoundation/openexr/issues/2670) · [#2675](https://github.com/AcademySoftwareFoundation/openexr/issues/2675)
-
-- Removed the aggregation workaround from the docs build process: made each example compile standalone and switched to a CMake OBJECT library so missing headers fail in CI.
-- Redesigned the docs site with a navigation-card homepage, light/dark theming, and Read the Docs version switching.
-- Reformatted 13 docs files and documented the missing `LJ2K_COMPRESSION` attribute.
-- Investigated two upstream bugs: a data race in OpenEXRCore's `unpack.c` found with ThreadSanitizer (#2670), and corrupted LJ2K encoder output on the 4.0.0-dev branch, traced to the look-up-table changes from #2637 (#2675).
-
+<!-- ### Open-Source Contributor, OpenEXR *— Academy Software Foundation* -->
+<!---->
+<!-- DevDays 2026 | PR [#2647](https://github.com/AcademySoftwareFoundation/openexr/pull/2647) · [#2652](https://github.com/AcademySoftwareFoundation/openexr/pull/2652) · [#2649](https://github.com/AcademySoftwareFoundation/openexr/pull/2649) · [#2657](https://github.com/AcademySoftwareFoundation/openexr/pull/2657) | Issues [#2670](https://github.com/AcademySoftwareFoundation/openexr/issues/2670) · [#2675](https://github.com/AcademySoftwareFoundation/openexr/issues/2675) -->
+<!---->
+<!-- - Investigated two bugs: Corrupted LJ2K encoder output on the 4.0.0-dev branch, traced to the look-up-table changes from #2637 (#2675) and a data race in OpenEXRCore's `unpack.c` found with ThreadSanitizer (#2670). -->
+<!-- - Redesigned the docs site with a navigation-card homepage, light/dark theming, version switching, and reformatted documentation files. -->
+<!---->
 ### Back End Intern — PerlThoughts *(Remote)*
 
 July 2025 – August 2025 | [Certificate](https://www.linkedin.com/in/abroop/overlay/1768791489146/single-media-viewer/?profileId=ACoAADBdaAcBNc2_QYAInFmz8sQhSshZ3Y2uUo8)

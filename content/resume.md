@@ -33,15 +33,15 @@ MCA graduate with experience in building back-end systems with TypeScript, Node.
 September 2026 
 
 - Added `LJ2K` and `ZSTD` compression support to the OpenEXR plugin across the C++ and Core read and write paths, with LJ2K quality and ZSTD level handling [(#5495)](https://github.com/AcademySoftwareFoundation/OpenImageIO/pull/5495).
-- Added version-gated regression tests to OpenImageIO with reference files, HTJ2K coverage, and updated docs; bumped the bundled OpenEXR build to v3.5.0 [(#5495)](https://github.com/AcademySoftwareFoundation/OpenImageIO/pull/5495).
+- Added version-gated regression tests with reference files, HTJ2K coverage, and updated docs; bumped the bundled OpenEXR build to v3.5.0 [(#5495)](https://github.com/AcademySoftwareFoundation/OpenImageIO/pull/5495).
 
 ### Open-Source Contributor, OpenEXR *— Academy Software Foundation*
 
 DevDays | September 2026
 
-- Removed the aggregation workaround from the docs build process: made each example compile standalone and switched to a CMake OBJECT library so missing headers fail in CI [(#2647)](https://github.com/AcademySoftwareFoundation/openexr/pull/2647).
+- Removed the aggregation test harness workaround from the docs build process: made each example compile standalone and switched to a CMake OBJECT library so missing headers fail in CI [(#2647)](https://github.com/AcademySoftwareFoundation/openexr/pull/2647).
 - Investigated two bugs: Corrupted LJ2K encoder output on the 4.0.0-dev branch [(#2675)](https://github.com/AcademySoftwareFoundation/openexr/issues/2675), and found a data race in OpenEXRCore `unpack.c` [(#2670)](https://github.com/AcademySoftwareFoundation/openexr/issues/2670).
-- Redesigned the OpenEXR documentation website with a navigation-card homepage, light/dark theming, version switching, and reformatted documentation files. [(#2657](https://github.com/AcademySoftwareFoundation/openexr/pull/2657) ,[#2652)](https://github.com/AcademySoftwareFoundation/openexr/pull/2652)
+- Redesigned the documentation website with a navigation-card homepage, light/dark theming, version switching, and reformatted documentation files. [(#2657](https://github.com/AcademySoftwareFoundation/openexr/pull/2657) ,[#2652)](https://github.com/AcademySoftwareFoundation/openexr/pull/2652)
 
 ### Back End Intern — PerlThoughts *(Remote)*
 

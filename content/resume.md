@@ -16,7 +16,7 @@ download: "/files/resume.pdf"
 
 ## Summary
 
-MCA graduate with experience building back-end systems in TypeScript, C++, and WebAssembly. Open-source contributor to Academy Software Foundation projects. Interested in full-stack, computer graphics, and low-level software engineering.
+MCA graduate with experience in building back-end systems with TypeScript, Node.js, Nest.js, C++, and WebAssembly. Open-source contributor to Academy Software Foundation projects. Interested in full-stack, computer graphics, and low-level software engineering.
 
 ## Technical Skills
 

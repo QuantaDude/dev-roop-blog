@@ -11,6 +11,9 @@
 {{ define "main" }}
 <main id="main" class="post">
 
+{{ if .Param "math" }}
+  {{ partialCached "math.html" . }}
+{{ end }}
   {{ $image := "" }}
   {{ with .Params.image }}{{ $image = . }}{{ end }}
   {{ with .Params.featured_image }}{{ $image = . }}{{ end }}

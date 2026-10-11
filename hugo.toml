@@ -193,3 +193,12 @@ numberedSubtitles = true
     enable = true
   [markup.goldmark.extensions.extras.delete]
     enable = true  # Enable if you still need strikethrough   
+
+[markup.goldmark.extensions.passthrough]
+  enable = true
+
+[markup.goldmark.extensions.passthrough.delimiters]
+  block = [['\[', '\]'], ['$$', '$$']]
+  inline = [['\(', '\)']]
+math = true
+

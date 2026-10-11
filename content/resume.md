@@ -2,7 +2,7 @@
 title: "Abhirup Bhattacharyya"
 subtitle: "Software Development Engineer · Back-End Developer"
 layout: "resume"
-date: 2026-09-30
+date: 2026-10-11
 location: "Uttar Pradesh, India"
 phone: "(+91) 89-2974-1066"
 email: "abhirup27022001@outlook.com"
@@ -32,15 +32,15 @@ MCA graduate with experience in building back-end systems with TypeScript, Node.
 
 September 2026 
 
-- Added `LJ2K` and `ZSTD` compression support to the OpenEXR plugin across the C++ and Core read and write paths, with LJ2K quality and ZSTD level handling [(#5495)](https://github.com/AcademySoftwareFoundation/OpenImageIO/pull/5495).
-- Added version-gated regression tests with reference files, HTJ2K coverage, and updated docs; bumped the bundled OpenEXR build to v3.5.0 [(#5495)](https://github.com/AcademySoftwareFoundation/OpenImageIO/pull/5495).
+- Added `LJ2K` and `ZSTD` compression support to the OpenEXR plugin across the C++ and Core API, with quality level handling [(#5495)](https://github.com/AcademySoftwareFoundation/OpenImageIO/pull/5495).
+- Added version-gated regression tests for 3 compression formats, thus increasing the coverage, and bumped the bundled OpenEXR build in GitHub CI; updated the docs [(#5495)](https://github.com/AcademySoftwareFoundation/OpenImageIO/pull/5495).
 
 ### Open-Source Contributor, OpenEXR *— Academy Software Foundation*
 
 DevDays | September 2026
 
-- Removed the aggregation test harness workaround from the docs build process: made each example compile standalone and switched to a CMake OBJECT library so missing headers fail in CI [(#2647)](https://github.com/AcademySoftwareFoundation/openexr/pull/2647).
-- Investigated two bugs: Corrupted LJ2K encoder output on the 4.0.0-dev branch [(#2675)](https://github.com/AcademySoftwareFoundation/openexr/issues/2675), and found a data race in OpenEXRCore `unpack.c` [(#2670)](https://github.com/AcademySoftwareFoundation/openexr/issues/2670).
+- Removed the aggregation test harness workaround from the docs build process: made each example compile into a standalone OBJECT library so missing headers fail in CI and make examples show the required headers.  [(#2647)](https://github.com/AcademySoftwareFoundation/openexr/pull/2647).
+- Investigated two bugs: Corrupted LJ2K encoder output on the dev branch [(#2675)](https://github.com/AcademySoftwareFoundation/openexr/issues/2675), and found a data race in OpenEXRCore `unpack.c` [(#2670)](https://github.com/AcademySoftwareFoundation/openexr/issues/2670).
 - Redesigned the documentation website with a navigation-card homepage, light/dark theming, version switching, and reformatted documentation files. [(#2657](https://github.com/AcademySoftwareFoundation/openexr/pull/2657) ,[#2652)](https://github.com/AcademySoftwareFoundation/openexr/pull/2652)
 
 ### Back End Intern — PerlThoughts *(Remote)*
@@ -57,7 +57,7 @@ July 2025 – August 2025 | [Certificate](https://www.linkedin.com/in/abroop/ove
 2026 – Ongoing | [GitHub](https://github.com/QuantaDude/RAG-codebase)
 
 - Chunks code by structure (functions, classes, methods), embeds each chunk, and stores it in PostgreSQL with pgvector.
-- Query pipeline pairs a decoder transformer (structure) with a code-embedding model (semantics) to narrow candidates before pgvector cosine search.
+- Query pipeline pairs a decoder transformer (structure) with a code-embedding model (semantics) to narrow candidates before pgvector cosine similarity search.
 
 ### Algorithm Visualizer *— C++, TypeScript, React, WASM, WebGL*
 

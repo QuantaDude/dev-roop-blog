@@ -32,14 +32,14 @@ MCA graduate and software developer focused on backend engineering and AI-powere
 
 ## Experience
 
-### Open-Source Contributor, OpenImageIO — Academy Software Foundation
+### Open-Source Contributor, OpenImageIO *— Academy Software Foundation*
 
 September 2026
 
 - Implemented LJ2K and ZSTD compression support in the OpenEXR plugin across the C++ and Core APIs, including compression quality-level handling. [PR #5495](https://github.com/AcademySoftwareFoundation/OpenImageIO/pull/5495).
 - Added version-gated regression tests for three compression formats, updated the bundled OpenEXR version in GitHub Actions CI, and updated documentation.
 
-### Open-Source Contributor, OpenEXR — Academy Software Foundation
+### Open-Source Contributor, OpenEXR *— Academy Software Foundation*
 
 September 2026
 
@@ -47,7 +47,7 @@ September 2026
 - Investigated encoder corruption in the LJ2K development branch and a potential data race in OpenEXRCore's `unpack.c`. [Issue #2675](https://github.com/AcademySoftwareFoundation/openexr/issues/2675) · [Issue #2670](https://github.com/AcademySoftwareFoundation/openexr/issues/2670).
 - Redesigned the documentation website with navigation cards, light/dark themes, version switching, and improved documentation structure. [PR #2657](https://github.com/AcademySoftwareFoundation/openexr/pull/2657).
 
-### Backend Intern, Pearl Thoughts — Remote
+### Backend Intern, Pearl Thoughts *— Remote*
 
 July 2025 – August 2025
 
@@ -56,9 +56,7 @@ July 2025 – August 2025
 
 ## Projects
 
-### Codebase Search Engine (RAG) — AI Systems
-
-**TypeScript, Node.js, PostgreSQL, pgvector, React, node-llama-cpp**
+### Codebase Search Engine (RAG) *— TypeScript, Node.js, PostgreSQL, pgvector, React*
 
 2026 – Ongoing | [GitHub](https://github.com/QuantaDude/RAG-codebase)
 
@@ -67,9 +65,7 @@ July 2025 – August 2025
 - Integrated PostgreSQL with pgvector for cosine-similarity search and HNSW indexing to retrieve relevant code chunks.
 - Used local GGUF models for query understanding and code embeddings through node-llama-cpp.
 
-### Shopify Inventory Management App
-
-**NestJS, TypeScript, Redis, BullMQ, GraphQL, PostgreSQL**
+### Shopify Inventory Management App  *— NestJS, TypeScript, Redis, BullMQ, GraphQL, PostgreSQL*
 
 [GitHub](https://github.com/QuantaDude/shopify_app)
 
@@ -77,9 +73,7 @@ July 2025 – August 2025
 - Implemented BullMQ background jobs and scheduled tasks for synchronizing inventory data across Redis, PostgreSQL, and Shopify.
 - Integrated Shopify Payments with a credits-based billing system.
 
-### Algorithm Visualizer
-
-**C++, TypeScript, React, WebAssembly, Pyodide**
+### Algorithm Visualizer *— C++, TypeScript, React, WebAssembly, Pyodide*
 
 [Deployed Application](https://quantadude.github.io/algoplex/) | [GitHub](https://github.com/QuantaDude/algoplex)
 
@@ -87,9 +81,7 @@ July 2025 – August 2025
 - Implemented a JavaScript bridge between Python and WebAssembly supporting asynchronous execution, pause/resume, and live state synchronization.
 - Developed interactive execution controls and visualizations for graph algorithms, stacks, and queues.
 
-### AI-Generated Music Detection API SDK
-
-**TypeScript, Vitest**
+### AI-Generated Music Detection API SDK *— TypeScript, Vitest*
 
 December 2025 – January 2026 | [GitHub](https://github.com/TtesseractT/uhmbrella-api)
 
@@ -98,10 +90,10 @@ December 2025 – January 2026 | [GitHub](https://github.com/TtesseractT/uhmbrel
 
 ## Education
 
-### Master of Computer Applications — Galgotia's College of Engineering & Technology
+### Master of Computer Applications *— Galgotia's College of Engineering & Technology*
 
 November 2022 – July 2024 | CGPA: 8.08
 
-### Bachelor of Computer Applications — Greater Noida Institute of Management
+### Bachelor of Computer Applications *— Greater Noida Institute of Management*
 
 August 2019 – June 2022 | 65.47%

@@ -65,14 +65,6 @@ July 2025 – August 2025
 - Integrated PostgreSQL with pgvector for cosine-similarity search and HNSW indexing to retrieve relevant code chunks.
 - Used local GGUF models for query understanding and code embeddings through node-llama-cpp.
 
-### Shopify Inventory Management App  *— NestJS, TypeScript, Redis, BullMQ, GraphQL, PostgreSQL*
-
-[GitHub](https://github.com/QuantaDude/shopify_app)
-
-- Developed an inventory management application for Shopify stores with JWT authentication and role-based authorization.
-- Implemented BullMQ background jobs and scheduled tasks for synchronizing inventory data across Redis, PostgreSQL, and Shopify.
-- Integrated Shopify Payments with a credits-based billing system.
-
 ### Algorithm Visualizer *— C++, TypeScript, React, WebAssembly, Pyodide*
 
 [Deployed Application](https://quantadude.github.io/algoplex/) | [GitHub](https://github.com/QuantaDude/algoplex)
@@ -80,6 +72,14 @@ July 2025 – August 2025
 - Built an interactive algorithm visualization platform combining a native C++ graph engine with Python execution through Pyodide.
 - Implemented a JavaScript bridge between Python and WebAssembly supporting asynchronous execution, pause/resume, and live state synchronization.
 - Developed interactive execution controls and visualizations for graph algorithms, stacks, and queues.
+
+### Shopify Inventory Management App  *— NestJS, TypeScript, Redis, BullMQ, GraphQL, PostgreSQL*
+
+[GitHub](https://github.com/QuantaDude/shopify_app)
+
+- Developed an inventory management application for Shopify stores with JWT authentication and role-based authorization.
+- Implemented BullMQ background jobs and scheduled tasks for synchronizing inventory data across Redis, PostgreSQL, and Shopify.
+- Integrated Shopify Payments with a credits-based billing system.
 
 ### AI-Generated Music Detection API SDK *— TypeScript, Vitest*
 

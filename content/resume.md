@@ -1,6 +1,6 @@
 ---
 title: "Abhirup Bhattacharyya"
-subtitle: "Software Development Engineer · Back-End Developer"
+subtitle: "Software Development Engineer · Backend & Systems Development"
 layout: "resume"
 date: 2026-11-07
 location: "Uttar Pradesh, India"
@@ -47,7 +47,7 @@ September 2026
 - Investigated encoder corruption in the LJ2K development branch and a potential data race in OpenEXRCore's `unpack.c`. [Issue #2675](https://github.com/AcademySoftwareFoundation/openexr/issues/2675) · [Issue #2670](https://github.com/AcademySoftwareFoundation/openexr/issues/2670).
 - Redesigned the documentation website with navigation cards, light/dark themes, version switching, and improved documentation structure. [PR #2657](https://github.com/AcademySoftwareFoundation/openexr/pull/2657).
 
-### Backend Intern, Pearl Thoughts *— Remote*
+### Backend Intern, PearlThoughts *— Remote*
 
 July 2025 – August 2025
 
@@ -58,7 +58,7 @@ July 2025 – August 2025
 
 ### Codebase Search Engine (RAG) *— TypeScript, Node.js, PostgreSQL, pgvector, React*
 
-2026 – Ongoing | [GitHub](https://github.com/QuantaDude/RAG-codebase)
+[Deployed Application](https://www.roop-dev.space/) | [GitHub](https://github.com/QuantaDude/RAG-codebase)
 
 - Built a codebase search system combining structural code parsing with semantic search, chunking source code into functions, classes, and methods.
 - Implemented a local LLM-powered query parser to extract structural constraints and a code-embedding model to generate semantic representations.
@@ -83,7 +83,7 @@ July 2025 – August 2025
 
 ### AI-Generated Music Detection API SDK *— TypeScript, Vitest*
 
-December 2025 – January 2026 | [GitHub](https://github.com/TtesseractT/uhmbrella-api)
+[GitHub](https://github.com/TtesseractT/uhmbrella-api)
 
 - Developed a runtime-agnostic JavaScript SDK with client initialization, retries, request validation, and error handling.
 - Added runtime assertions, automated Vitest tests, and JSDoc documentation; reported a Jobs API bug.
